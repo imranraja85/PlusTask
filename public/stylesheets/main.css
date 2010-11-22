@@ -1,0 +1,55 @@
+a {
+  color: #c6c6c6;
+  text-decoration:none;
+}
+
+a:visited {
+  color: #166999;
+}
+
+a:hover{
+  color: #3a87a2;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.rounded-corner th {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#85a8bc;
+  background-image:initial;
+  background-origin:initial;
+  color:#ffffff;
+  text-align: left;
+  font-size:13px;
+  font-weight:normal;
+  padding-bottom:8px;
+  padding-left:8px;
+  padding-right:8px;
+  padding-top:8px;
+}
+
+.rounded-corner td {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#c7dbe6;
+  background-image:initial;
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+  border-top-color:#FFFFFF;
+  border-top-style:solid;
+  border-top-width:1px;
+  color:#13374c;
+  padding-bottom:8px;
+  padding-left:8px;
+  padding-right:8px;
+  padding-top:8px;
+  font-size: 13px;
+}
+.rounded-corner tr:hover {
+  background-color: #B9C9FE;
+}

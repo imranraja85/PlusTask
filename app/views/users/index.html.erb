@@ -1,0 +1,17 @@
+Employees Page
+<table class="rounded-corner">
+  <thead>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Role</th>
+  </thead>
+  <tbody>
+    <% for user in @users %>
+      <tr>
+        <td> <%= user.name %> </td>
+        <td> <%= user.email %> </td>
+        <td> <%= user.role %> </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

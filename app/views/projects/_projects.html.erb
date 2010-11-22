@@ -1,0 +1,34 @@
+<table class="rounded-corner">
+  <thead>
+    <tr>
+      <th>&nbsp;</th>
+      <th>Project Name</th>
+      <th>Project Status</th>
+      <th>Project Owner</th>
+      <th>Employees</th>
+    </tr>
+  </thead>
+  <tfoot>
+  </tfoot>
+  <tbody>
+    <% for project in @projects %>
+      <tr>
+        <td>
+          <%= link_to "o","" %>
+        </td>
+        <td>
+          <%= project.name %>
+        </td>
+        <td>
+          <%= project.status %>
+        </td>
+        <td>
+          <%= project.owner.name %>
+        </td>
+        <td>
+          <%= project.users.count %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
