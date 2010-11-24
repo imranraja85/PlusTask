@@ -1,0 +1,2 @@
+$("#project-details-<%= @project.id %>").html("<%= escape_javascript(render("show")) %>");
+$(".hidden-<%= @project.id %>").removeClass('hidden');

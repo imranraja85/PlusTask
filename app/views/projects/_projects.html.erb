@@ -14,7 +14,7 @@
     <% for project in @projects %>
       <tr>
         <td>
-          <%= link_to "o","" %>
+          <%= link_to "o", project_path(project), :remote => true %>
         </td>
         <td>
           <%= project.name %>
@@ -27,6 +27,11 @@
         </td>
         <td>
           <%= project.users.count %>
+        </td>
+      </tr>
+      <tr class="hidden hidden-<%= project.id %>">
+        <td colspan="5">
+          <div class="project-details" id="project-details-<%= project.id %>"></div>
         </td>
       </tr>
     <% end %>

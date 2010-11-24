@@ -1,3 +1,4 @@
+/* default link styles */
 a {
   color: #c6c6c6;
   text-decoration:none;
@@ -11,6 +12,7 @@ a:hover{
   color: #3a87a2;
 }
 
+/* default table styles */
 table {
   border-collapse: collapse;
   width: 100%;
@@ -50,6 +52,18 @@ table {
   padding-top:8px;
   font-size: 13px;
 }
+
 .rounded-corner tr:hover {
   background-color: #B9C9FE;
+}
+
+/*reusable classes */
+.hidden {
+  display: none;
+}
+
+/* ### Projects Index ### */
+.project-details{
+  padding: 10px;
+  background-color: #dae8f0;
 }
