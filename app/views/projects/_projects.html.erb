@@ -14,7 +14,7 @@
     <% for project in @projects %>
       <tr>
         <td>
-          <%= link_to "o", project_path(project), :remote => true %>
+          <%= link_to "+", project_path(project), :remote => true %>
         </td>
         <td>
           <%= project.name %>

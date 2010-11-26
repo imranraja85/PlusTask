@@ -1,2 +1,3 @@
 $("#project-details-<%= @project.id %>").html("<%= escape_javascript(render("show")) %>");
+$("#project-details-<%= @project.id %>").slideToggle("fast");
 $(".hidden-<%= @project.id %>").removeClass('hidden');

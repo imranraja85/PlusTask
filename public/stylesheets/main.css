@@ -62,8 +62,24 @@ table {
   display: none;
 }
 
+.clear {
+  clear: both;
+}
 /* ### Projects Index ### */
 .project-details{
   padding: 10px;
-  background-color: #dae8f0;
+  #background-color: #dae8f0;
+  background-color: #ffffff;
 }
+
+.project-info {
+  float: left;
+}
+
+.employees{
+  padding: 5px;
+  margin-right: 300px;
+  width: 200px;
+  float:right;
+}
+

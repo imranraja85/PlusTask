@@ -1,4 +1,31 @@
-Project Details:
-<%= @project.name %> <br/>
-<%= @project.owner.name %> <br/>
+<div class="project-info">
+  <h2><%= @project.name %></h2>
+  <h3>Description:</h3>
+</div>
 
+<div class="employees">
+<h3>Active Users</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Department</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= @project.owner.name %></td>
+        <td>Project Owner </td>
+      </tr>
+      </tr>
+      <% for user in @project.users %>
+        <tr>
+          <td><%= user.name %></td>
+          <td><%= user.department %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<div class="clear"></div>

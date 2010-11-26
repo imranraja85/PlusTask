@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(:version => 20101122024407) do
     t.string    "name",       :limit => 80,  :default => "",         :null => false
     t.string    "email",      :limit => 128, :default => "",         :null => false
     t.string    "role",       :limit => 0,   :default => "Employee"
+    t.string    "department", :limit => 128
     t.timestamp "updated_at"
     t.timestamp "created_at"
   end

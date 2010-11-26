@@ -5,6 +5,7 @@ class CreateUsers < ActiveRecord::Migration
                 `name` varchar(80) NOT NULL default '',
                 `email` varchar(128) NOT NULL default '',
                 `role` ENUM('Admin','HeadManager','Manager','Employee') DEFAULT 'Employee',
+                `department` varchar(128) NULL COMMENT 'Department the person works in',
                 `updated_at` TIMESTAMP NULL COMMENT 'Datetime of latest update',
                 `created_at` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Datetime of creation.',
                 PRIMARY KEY  (`id`),
