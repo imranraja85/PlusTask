@@ -2,3 +2,11 @@
   <%= f.label :name %>
   <%= f.text_field :name %>
 </p>
+<p>
+  <%= f.label :owner_id, "Project Owner" %>
+  <%= f.select :owner_id, User.all.collect{|u| [u.name, u.id]} %>
+</p>
+<p>
+  <%= f.label :status %>
+  <%= f.select :status, Project::STATUS %>
+</p>

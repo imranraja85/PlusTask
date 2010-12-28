@@ -10,7 +10,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101122024407) do
+ActiveRecord::Schema.define(:version => 20101212203322) do
+
+  create_table "events", :force => true do |t|
+    t.string    "name"
+    t.integer   "start_date"
+    t.integer   "start_time"
+    t.integer   "end_time"
+    t.string    "status",     :limit => 0, :default => "In Process"
+    t.timestamp "updated_at"
+    t.timestamp "created_at"
+  end
 
   create_table "project_user", :force => true do |t|
     t.integer   "project_id", :limit => 2
@@ -21,6 +31,7 @@ ActiveRecord::Schema.define(:version => 20101122024407) do
 
   create_table "projects", :force => true do |t|
     t.string    "name",          :limit => 80, :default => "",                      :null => false
+    t.string    "description",                 :default => "",                      :null => false
     t.string    "status",        :limit => 0,  :default => "Requirement Gathering"
     t.integer   "created_by_id", :limit => 2
     t.integer   "owner_id",      :limit => 2
@@ -29,9 +40,10 @@ ActiveRecord::Schema.define(:version => 20101122024407) do
   end
 
   create_table "users", :force => true do |t|
-    t.string    "name",       :limit => 80,  :default => "",         :null => false
-    t.string    "email",      :limit => 128, :default => "",         :null => false
-    t.string    "role",       :limit => 0,   :default => "Employee"
+    t.string    "name",       :limit => 80,  :default => "", :null => false
+    t.string    "company",    :limit => 80,  :default => "", :null => false
+    t.string    "email",      :limit => 128, :default => "", :null => false
+    t.string    "title",                     :default => "", :null => false
     t.string    "department", :limit => 128
     t.timestamp "updated_at"
     t.timestamp "created_at"

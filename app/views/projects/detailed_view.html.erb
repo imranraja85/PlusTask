@@ -1,0 +1,37 @@
+<h1 class="lime-green-header">Projects</h1>
+<span class="submenu-links"><%= link_to "Summary View", projects_path%> | <%= link_to "Detailed View", detailed_view_projects_path %></span>
+<%= link_to image_tag("/images/add_project.png"), new_project_path, :class => "floatR" %>
+<div class="clear"></div>
+<ul id="projects-list">
+  <% @projects.each_with_index do |project, index| %>
+    <li class="project-in-list <%= project.id == params[:id].to_i ? "selected-project" : "" %>">
+      <%= link_to project.name, :id => project.id %>
+    </li>
+  <% end %>
+</ul>
+<div id="projects-container">
+  <table id="project-details">
+    <tr><td class="data-label">Project Owner: </td><td><%= @project.owner.name %></tr>
+    <tr><td class="data-label">Created On: </td><td><%= fmt_month_day_year(@project.created_at) %></td></tr>
+    <tr><td class="data-label">Status: </td><td><%= @project.status %></td></tr>
+    <tr><td class="data-label">Description: </td><td><%= @project.description %></td></tr>
+  </table>
+  <div id="project-people">
+    <span class="lime-green-submenu">People on this project</span><br/>
+    <% @project.users.each do |user| %>
+      <%= check_box_tag "user[#{user.id}]" %>
+      <%= label_tag "user[#{user.id}]", user.name %><br/>
+    <% end %>
+    <%= submit_tag "Schedule Meeting" %>
+  </div>
+  <div class="clear"></div>
+  <div id="files-container">
+    <span class="lime-green-submenu">Files</span><br/>
+  </div>
+  <div id="latest-comments">
+    <span class="lime-green-submenu">Latest Comments</span><br/>
+  </div>
+  <div id="latest-status-updates">
+    <span class="lime-green-submenu">Latest Status Updates</span><br/>
+  </div>
+</div>

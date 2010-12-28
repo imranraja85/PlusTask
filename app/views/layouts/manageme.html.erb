@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Manageme</title>
+    <%= stylesheet_link_tag :all %>
+    <%= javascript_include_tag :all %>
+    <%= csrf_meta_tag %>
+  </head>
+  <body>
+    <div id="top-header">
+      <span class="floatL">ManageMe Dashboard</span>
+      <span class="floatR"> Logged in as <%= current_user.name %> | <%= link_to "Logout", "" %></span>
+    </div>
+    <div id="body">
+      <div id="company-header">
+        <%= current_user.company %>
+      </div>
+      <div id="nav-container">
+        <%= render :partial => 'layouts/header/navigation' %>
+      </div>
+      <div id="content"">
+        <% flash.each do |name, msg| -%>
+          <%= content_tag :div, msg, :id => "flash_#{name}" %>
+        <% end -%>
+
+        <%= yield %>
+      </div>
+    </div>
+  </body>
+</html>

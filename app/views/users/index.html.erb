@@ -1,17 +1,49 @@
-Employees Page
-<table class="rounded-corner">
-  <thead>
-    <th>Name</th>
-    <th>Email</th>
-    <th>Role</th>
-  </thead>
-  <tbody>
-    <% for user in @users %>
-      <tr>
-        <td> <%= user.name %> </td>
-        <td> <%= user.email %> </td>
-        <td> <%= user.role %> </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<%= javascript_include_tag "app/selectall.js" %>
+<script type="text/javascript" charset="utf-8">
+ jQuery(document).ready(function(){
+  new SelectAllButton('#select-all-users','.users');
+</script>
+
+<h1 class="lime-green-header">Users</h1>
+<%= link_to image_tag("/images/add_person.png"), new_user_path, :class => "floatR" %>
+<%= form_tag users_path, :method => :get do %>
+  <%= label_tag "user_department", "Department" %>
+  <%= select "user", "department", User::DEPARTMENTS, {:prompt => "Select Department"} %>
+
+  <%= submit_tag "Filter" %>
+<% end %>
+
+<%= form_for @event do |f| %>
+<div class="users">
+  <table class="rounded-corner">
+    <thead>
+      <th><%= check_box_tag 'select-all-users' %></th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Title</th>
+      <th>Department</th>
+    </thead>
+    <tbody>
+      <% for user in @users %>
+        <tr>
+          <td> <%= check_box_tag "users[#{user.id}]","" %></td>
+          <td> <%= user.name %> </td>
+          <td> <%= user.email %> </td>
+          <td> <%= user.title %> </td>
+          <td> <%= user.department %> </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+  <%= f.label :name %>
+  <%= f.text_field :name %><br/>
+
+  <%= f.label :start_date %>
+  <%= f.text_field :start_date, :id => 'datepicker' %><br/>
+  
+  <%= f.label :start_time %>
+  <%= f.text_field :start_time %><br/>
+
+  <%= submit_tag "Schedule Meeting" %>
+<% end %>

@@ -1,11 +1,15 @@
+<div class="lime-green-header">Projects</div>
+  <%= link_to image_tag("/images/add_project.png"), new_project_path, :class => "floatR" %>
+<span class="submenu-links"><%= link_to "Summary View", projects_path%> | <%= link_to "Detailed View", detailed_view_projects_path %></span>
+<div class="clear"></div>
 <table class="rounded-corner">
   <thead>
     <tr>
       <th>&nbsp;</th>
-      <th>Project Name</th>
-      <th>Project Status</th>
-      <th>Project Owner</th>
-      <th>Employees</th>
+      <th>Name</th>
+      <th>Status</th>
+      <th>Owner</th>
+      <th>Personel</th>
     </tr>
   </thead>
   <tfoot>
@@ -15,9 +19,11 @@
       <tr>
         <td>
           <%= link_to "+", project_path(project), :remote => true %>
+          <%= link_to "goto", project_path(project) %>
         </td>
         <td>
           <%= project.name %>
+          <%= link_to "edit", edit_project_path(project) %>
         </td>
         <td>
           <%= project.status %>

@@ -1,6 +1,10 @@
 <nav>
-  <%= link_to "Home", root_path %>
-  <%= link_to "Add Project", new_project_path %>
-  <%= link_to "Add Person", new_user_path %>
-  <%= link_to "Employee List", users_path %>
+  <ul>
+    <li class="menu-item-home"><%= link_to "", root_path %></li>
+    <li class="menu-item-projects"><%= link_to "", projects_path %></li>
+    <li class="menu-item-people"><%= link_to "", users_path %></li>
+    <li class="menu-item-setup"><%= link_to "", users_path %></li>
+    <!-- <li class="menu-item-setup"><%= link_to "events", events_path %></li> -->
+  </ul>
 </nav>
+<div class="clear"></div>

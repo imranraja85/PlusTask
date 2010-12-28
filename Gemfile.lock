@@ -76,6 +76,7 @@ GEM
     treetop (1.4.9)
       polyglot (>= 0.3.1)
     tzinfo (0.3.23)
+    vpim (0.695)
     webrat (0.7.2)
       nokogiri (>= 1.2.0)
       rack (>= 1.0)
@@ -89,4 +90,5 @@ DEPENDENCIES
   mysql
   rails (= 3.0.0.rc)
   ruby-debug
+  vpim
   webrat

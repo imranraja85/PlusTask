@@ -3,8 +3,9 @@ class CreateUsers < ActiveRecord::Migration
     up_sql = %Q(CREATE TABLE `users` (
                 `id` SMALLINT(5) UNSIGNED NOT NULL AUTO_INCREMENT,           
                 `name` varchar(80) NOT NULL default '',
+                `company` varchar(80) NOT NULL default '',
                 `email` varchar(128) NOT NULL default '',
-                `role` ENUM('Admin','HeadManager','Manager','Employee') DEFAULT 'Employee',
+                `title` varchar(255) NOT NULL default '',
                 `department` varchar(128) NULL COMMENT 'Department the person works in',
                 `updated_at` TIMESTAMP NULL COMMENT 'Datetime of latest update',
                 `created_at` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Datetime of creation.',

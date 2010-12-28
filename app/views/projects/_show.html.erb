@@ -1,7 +1,9 @@
 <div class="project-info">
-  <h2><%= @project.name %></h2>
-  <h3>Description:</h3>
-</div>
+  <h2 class="green-header"><%= @project.name %></h2>
+  <div class="project-description">
+    <%= @project.description %>
+  </div>
+<div class="clear"></div>
 
 <div class="employees">
 <h3>Active Users</h3>
@@ -29,3 +31,5 @@
 </div>
 
 <div class="clear"></div>
+<%= link_to "Make Changes", edit_project_path(@project) %>
+</div>

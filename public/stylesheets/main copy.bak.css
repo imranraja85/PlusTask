@@ -1,0 +1,105 @@
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, code, del, dfn, em, img, q, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, dialog, figure, footer, header, hgroup, nav, section {margin:0;padding:0;border:0;font-weight:inherit;font-style:inherit;font-size:100%;font-family:inherit;vertical-align:baseline;}
+article, aside, dialog, figure, footer, header, hgroup, nav, section {display:block;}
+body {line-height:1.5;}
+table {border-collapse:separate;border-spacing:0;}
+caption, th, td {text-align:left;font-weight:normal;}
+table, td, th {vertical-align:middle;}
+blockquote:before, blockquote:after, q:before, q:after {content:"";}
+blockquote, q {quotes:"" "";}
+a img {border:none;}
+
+/* main layout */
+#top-header {height: 25px;background-color: black;color: #fff;padding-top: 2px;padding-left: 10px;padding-right: 10px;}
+
+#top-header a {color: #a1c658;}
+
+#nav-container ul {list-style-type: none;padding-left: 10px;}
+
+#nav-container li a {background-image: url('/images/sprites.png');display:inline;height:35px;float:left;}
+
+.menu-item-home a {background-position: -10px -10px;width: 65px;}
+.menu-item-projects a {background-position: -70px -10px;width: 90px;}
+.menu-item-people a {background-position: -150px -10px;width: 75px;}
+.menu-item-setup a {background-position: -225px -10px;width: 65px;}
+
+.menu-item-home a:hover {background-position: -10px -50px;width: 65px;}
+.menu-item-projects a:hover {background-position: -70px -50px;width: 90px;}
+.menu-item-people a:hover {background-position: -150px -50px;width: 75px;}
+.menu-item-setup a:hover {background-position: -225px -50px;width: 65px;}
+
+#company-header {text-shadow: 2px 2px 2px #909090;padding-top: 15px;padding-left: 10px;height: 70px;width: 100%;font-size: 40px;}
+
+#nav-container {}
+
+.horizontal-list li {display: block;float: left;padding-left: 15px;}
+
+#content {padding:10px;}
+
+/* default link styles */
+a {color: #166999;text-decoration:none;}
+
+a:visited {color: #166999;}
+
+a:hover {color: #3a87a2;}
+
+/* default table styles */
+table {border-collapse: collapse;width: 100%;}
+
+.rounded-corner th {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#a1c658;
+  background-image:initial;
+  background-origin:initial;
+  color: #000000;
+  text-align: left;
+  font-size:15px;
+  font-weight:700;
+  padding-bottom:8px;
+  padding-left:8px;
+  padding-right:8px;
+  padding-top:8px;
+}
+
+.rounded-corner td {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#ecf6d9;
+  background-image:initial;
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+  border-top-color:#FFFFFF;
+  border-top-style:solid;
+  border-top-width:1px;
+  color:#13374c;
+  padding-bottom:8px;
+  padding-left:8px;
+  padding-right:8px;
+  padding-top:8px;
+  font-size: 13px;
+}
+
+.rounded-corner tr:hover {background-color: #B9C9FE;}
+
+/*reusable classes */
+.hidden {display: none;}
+.clear {clear: both;}
+.floatL {float:left;}
+.floatR {float:right;}
+
+.small-header{font-size: 14px; color:red }
+.blue-header{color:#4B4B4B; font-weight:bold; font-size:20px; padding:10px;border-top:3px solid #C2e0f2; margin-bottom:15px; #background:#ecfaff;}
+.green-header{color:#4B4B4B; font-weight:bold; font-size:20px; padding:10px;border-top:3px solid #ecf5d9; margin-bottom:15px; background:#f0f6e4;}
+
+/* ### Projects Index ### */
+.project-details{padding: 10px;background-color: #ffffff;}
+.project-info {background-color: #f3f6ed;}
+.employees{padding: 5px;margin-right: 300px;width: 200px;float:right;}
+
+/* ### PROJECT */
+.project-description {width: 400px}
+
+/* ### DASHBOARD ### */
+.dashboard-feed {width: 300px; height:400px; background-color: #ccc; float:left;}
+.dashboard-feed h1 {padding:10px;border-bottom: 1px solid}

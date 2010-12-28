@@ -1,0 +1,18 @@
+<table>
+  <thead>
+    <tr>
+      <th>Subject</th>
+      <th>Date</th>
+      <th>Time</th>
+    </tr>
+  </thead>
+  <tbody> 
+    <% for event in @events %>
+      <tr>
+        <td><%= event.name %></td>
+        <td><%= event.start_date %></td>
+        <td><%= event.start_time %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

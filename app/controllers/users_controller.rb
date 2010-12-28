@@ -1,7 +1,17 @@
 class UsersController < ApplicationController
+  layout "manageme"
 
   def index
-    @users = User.all  
+    @event = Event.new
+
+    if params[:user] && params[:user]["department"] && params[:user]["department"].present?
+      @users = User.by_department(params[:user][:department])
+    else
+      @users = User.all  
+    end
+   # if params[:send]
+   #   UserMailer.welcome_user(User.first,params[:date]).deliver
+   # end
   end
 
   def new

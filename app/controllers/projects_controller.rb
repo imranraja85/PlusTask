@@ -1,5 +1,14 @@
 class ProjectsController < ApplicationController
+  layout "manageme"
+
   def index
+    @projects = Project.all
+  end
+
+  def detailed_view
+    @projects = Project.all
+    @project = params[:id].present? ? Project.find(params[:id]) : Project.first 
+    render :action => "detailed_view", :cat => @project.id
   end
 
   def show
@@ -15,6 +24,7 @@ class ProjectsController < ApplicationController
   end
 
   def edit
+    @project = Project.find(params[:id])
   end
 
   def create
@@ -29,5 +39,13 @@ class ProjectsController < ApplicationController
   end
 
   def update
+    @project = Project.find(params[:id])
+    if @project.update_attributes(params[:project])
+      flash[:notice] = "Successfully updated project"
+      redirect_to root_url
+    else
+      flash[:error] = "Failed to update project"
+      redirect_to root_url
+    end
   end
 end
