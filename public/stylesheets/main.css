@@ -82,10 +82,11 @@ table {border-collapse: collapse;width: 100%;}
 .floatR {float:right;}
 .data-label{font-weight: bold}
 .eighteen {font-size: 18px}
+.big-header {font-size: 26px;letter-spacing:1px; background-color color: red} 
 
 .small-header{font-size: 14px; color:red }
-.blue-header{color:#4B4B4B; font-weight:bold; font-size:20px; padding:10px;border-top:3px solid #C2e0f2; margin-bottom:15px; #background:#ecfaff;}
-.green-header{color:#4B4B4B; font-weight:bold; font-size:20px; padding:10px;border-top:3px solid #ecf5d9; margin-bottom:15px; background:#f0f6e4;}
+.blue-header{color:#4B4B4B; font-weight:bold; font-size:20px; padding: 5px 0px 0px 5px;border-top:3px solid #C2e0f2; margin-bottom:15px; #background:#ecfaff;}
+.green-header{color:#4B4B4B; font-weight:bold; font-size:20px; padding:10px;border-top:3px solid #AECD39; margin-bottom:15px; background:#f0f6e4;}
 .lime-green-header{color:#aecd39;font-family:"Myriad Pro";font-size:24px; font-weight: bold}
 .lime-green-submenu{color:#aecd39;font-family:"Myriad Pro";font-size:18; font-weight: bold}
 
@@ -97,14 +98,18 @@ table {border-collapse: collapse;width: 100%;}
 
 /* ## DETAILED PROJECT VIEW ## */
 /* projects left hand nav */
-#projects-list {width:220px;float:left;height: 100px}
+#projects-list {border-right: dashed 1px;width:219px;float:left;height: 600px;overflow:hidden}
 #projects-list li {list-style-type:none}
 #projects-list li a{padding: 10px 40px;}
-.project-in-list {height: 30px;padding-top:12px;text-align:center}
+.project-in-list {background-color:#f9f9f9;height: 30px;padding-top:12px;text-align:center}
 .selected-project {background-color: #f4f4f4}
 
 /*projects container*/
-#projects-container {padding:10px; background-color: #f4f4f4;float:left;width:700px;height:600px}
+#projects-container {padding: 0px 10px 10px 10px; background-color: #ffffff;float:left;width:700px;height:600px}
+#mini-nav {padding: 0px 0px 5px 5px;font-size: 13px}
+.quick-links {list-style: none}
+.quick-links li {display:inline; padding: 0px 5px 0px 5px}
+.quick-links a {border-bottom: 1px dashed}
 .project-description {width: 400px}
 #project-details {width: 400px;float:left}
 #project-details .data-label {width: 100px;text-align:right; white-space: nowrap; padding-right:10px;vertical-align:baseline}
@@ -114,17 +119,26 @@ table {border-collapse: collapse;width: 100%;}
 #latest-comments {background-color: #fff; width: 300px; height: 100px;float:left;padding:10px;margin:10px}
 #latest-status-updates {background-color: #fff; width: 300px;height: 100px;float:left;padding:10px;margin:10px}
 
-#files-container {position: relative;overflow:hidden;width: 680px; background-color: #fff; height: 190px;padding:10px}
+#files-container {background-color: #fff; height: 190px;}
+/*
 #files-list {overflow:none;list-style:none;white-space:nowrap;position:absolute;padding:0;margin:0}
 #files-container ul li {display:inline}
 .slider {width: 542px;height: 17px;margin-top: 140px;margin-left: 5px;padding: 1px;position: relative;background: url(http://static.jqueryfordesigners.com/demo/images/productbrowser_scrollbar_20070622.png) no-repeat;}
 
 .single-file {padding:10px;width: 120px;height: 130px;background-color: #F0F0F0;float:left;margin:10px}
 #file-icon {float:left}
-.file-label {font-size: 12px;float:left; padding: 0px 10px}
+.file-label {font-size: 12px;float:left; padding: 0px 10px} */
 /*** END OF DETAILED PROJECT VIEW ***/
 
 /* ### PROJECT */
 /* ### DASHBOARD ### */
 #dashboard-feed {height: 200px;background-color: #ccc;}
 #dashboard-feed h1 {padding:10px;border-bottom: 1px solid}
+
+.compact-table th {font: bold 11px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;color: #6D929B;border-right: 1px solid #C1DAD7;border-bottom: 1px solid #C1DAD7;border-top: 1px solid #C1DAD7;letter-spacing: 2px;text-transform: uppercase;text-align: left;padding: 6px 6px 6px 12px;background: #CAE8EA url(images/bg_header.jpg) no-repeat;}
+
+.compact-table tr.even {background-color: #FFFFFF;}
+.compact-table tr.odd {background-color: #F5FAFA;}
+
+.compact-table td {padding: 6px 6px 6px 12px}
+

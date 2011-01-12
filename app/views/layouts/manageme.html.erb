@@ -3,13 +3,14 @@
   <head>
     <title>Manageme</title>
     <%= stylesheet_link_tag :all %>
+    <%= stylesheet_link_tag "css/redmond/jquery-ui-1.8.7.custom.css" %>
     <%= javascript_include_tag :all %>
     <%= csrf_meta_tag %>
   </head>
   <body>
     <div id="top-header">
       <span class="floatL">ManageMe Dashboard</span>
-      <span class="floatR"> Logged in as <%= current_user.name %> | <%= link_to "Logout", "" %></span>
+      <span class="floatR"> Logged in as <%= current_user.name %>&nbsp; | &nbsp;<%= link_to "Logout", destroy_user_session_path %></span>
     </div>
     <div id="body">
       <div id="company-header">

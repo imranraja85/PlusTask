@@ -1,0 +1,32 @@
+<a name="people"></a>
+<div class="lime-green-submenu">People on this project</div>
+<table class="compact-table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Department</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @project.users.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= user.email %></td>
+        <td><%= user.department %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+</table>
+
+<!---<div id="project-people">
+  <% @project.users.each do |user| %>
+    <%= check_box_tag "user[#{user.id}]" %>
+    <%= label_tag "user[#{user.id}]", user.name %><br/>
+  <% end %>
+  <%= submit_tag "Schedule Meeting" %>
+</div>
+--->

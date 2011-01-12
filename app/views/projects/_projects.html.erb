@@ -2,7 +2,7 @@
   <%= link_to image_tag("/images/add_project.png"), new_project_path, :class => "floatR" %>
 <span class="submenu-links"><%= link_to "Summary View", projects_path%> | <%= link_to "Detailed View", detailed_view_projects_path %></span>
 <div class="clear"></div>
-<table class="rounded-corner">
+<table class="compact-table">
   <thead>
     <tr>
       <th>&nbsp;</th>
@@ -16,7 +16,7 @@
   </tfoot>
   <tbody>
     <% for project in @projects %>
-      <tr>
+      <tr class="<%= cycle("even","odd")%>">
         <td>
           <%= link_to "+", project_path(project), :remote => true %>
           <%= link_to "goto", project_path(project) %>

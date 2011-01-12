@@ -1,0 +1,24 @@
+<a name="files"></a>
+<span class="lime-green-submenu">Files</span><br/>
+<div id="files-container">
+
+  <table class='compact-table'>
+    <thead>
+      <th>Name</th>
+      <th>Uploaded By</th>
+      <th>Uploaded On</th>
+    </thead>
+    <tbody>
+      <% current_user.uploaded_files.each do |file| %>
+        <tr class="<%= cycle("even","odd")%>">
+          <td><%= file.asset_file_name %></td>
+          <td><%= file.user.name %></td>
+          <td><%= fmt_two_digit(file.created_at) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <% form_for @uploaded_file, :as => :uploaded_file, :url => uploaded_files_path, :html => {:multipart => true} do |form| %>
+    <%= form.file_field :asset %>
+    <%= form.submit %>
+  <% end %>
