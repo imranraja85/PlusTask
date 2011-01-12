@@ -110,10 +110,18 @@ table {border-collapse: collapse;width: 100%;}
 #project-details .data-label {width: 100px;text-align:right; white-space: nowrap; padding-right:10px;vertical-align:baseline}
 
 #project-people {width: 200px;float:right;background-color: #fff;padding:10px}
+#people-on-project-header {margin-left:80px}
 #latest-comments {background-color: #fff; width: 300px; height: 100px;float:left;padding:10px;margin:10px}
 #latest-status-updates {background-color: #fff; width: 300px;height: 100px;float:left;padding:10px;margin:10px}
 
-#files-container {width: 680px; background-color: #fff; height: 100px;margin-top: 10px;padding:10px}
+#files-container {position: relative;overflow:hidden;width: 680px; background-color: #fff; height: 190px;padding:10px}
+#files-list {overflow:none;list-style:none;white-space:nowrap;position:absolute;padding:0;margin:0}
+#files-container ul li {display:inline}
+.slider {width: 542px;height: 17px;margin-top: 140px;margin-left: 5px;padding: 1px;position: relative;background: url(http://static.jqueryfordesigners.com/demo/images/productbrowser_scrollbar_20070622.png) no-repeat;}
+
+.single-file {padding:10px;width: 120px;height: 130px;background-color: #F0F0F0;float:left;margin:10px}
+#file-icon {float:left}
+.file-label {font-size: 12px;float:left; padding: 0px 10px}
 /*** END OF DETAILED PROJECT VIEW ***/
 
 /* ### PROJECT */

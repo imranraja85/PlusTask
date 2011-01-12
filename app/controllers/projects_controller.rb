@@ -9,6 +9,7 @@ class ProjectsController < ApplicationController
     @projects = Project.all
     @project = params[:id].present? ? Project.find(params[:id]) : Project.first 
     render :action => "detailed_view", :cat => @project.id
+    @uploaded_file = UploadedFile.new
   end
 
   def show
@@ -21,6 +22,7 @@ class ProjectsController < ApplicationController
 
   def new
     @project = Project.new
+    @users = User.all
   end
 
   def edit

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101212203322) do
+ActiveRecord::Schema.define(:version => 20110102074336) do
 
   create_table "events", :force => true do |t|
     t.string    "name"
@@ -35,6 +35,16 @@ ActiveRecord::Schema.define(:version => 20101212203322) do
     t.string    "status",        :limit => 0,  :default => "Requirement Gathering"
     t.integer   "created_by_id", :limit => 2
     t.integer   "owner_id",      :limit => 2
+    t.timestamp "updated_at"
+    t.timestamp "created_at"
+  end
+
+  create_table "uploaded_files", :force => true do |t|
+    t.integer   "user_id",            :limit => 2
+    t.string    "asset_file_name",                 :default => "", :null => false
+    t.string    "asset_content_type",              :default => "", :null => false
+    t.integer   "asset_file_size"
+    t.datetime  "asset_updated_at"
     t.timestamp "updated_at"
     t.timestamp "created_at"
   end

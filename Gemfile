@@ -9,6 +9,8 @@ gem "mysql"
 gem "jquery-rails"
 gem "vpim"
 gem "devise"
+gem "paperclip", "~> 2.3"
+
 # Use unicorn as the web server
 # gem 'unicorn'
 

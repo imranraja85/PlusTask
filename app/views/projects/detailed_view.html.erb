@@ -1,3 +1,5 @@
+<%= javascript_include_tag 'app/project_details' %>
+
 <h1 class="lime-green-header">Projects</h1>
 <span class="submenu-links"><%= link_to "Summary View", projects_path%> | <%= link_to "Detailed View", detailed_view_projects_path %></span>
 <%= link_to image_tag("/images/add_project.png"), new_project_path, :class => "floatR" %>
@@ -16,8 +18,8 @@
     <tr><td class="data-label">Status: </td><td><%= @project.status %></td></tr>
     <tr><td class="data-label">Description: </td><td><%= @project.description %></td></tr>
   </table>
+  <span id="people-on-project-header" class="lime-green-submenu">People on this project</span><br/>
   <div id="project-people">
-    <span class="lime-green-submenu">People on this project</span><br/>
     <% @project.users.each do |user| %>
       <%= check_box_tag "user[#{user.id}]" %>
       <%= label_tag "user[#{user.id}]", user.name %><br/>
@@ -25,8 +27,26 @@
     <%= submit_tag "Schedule Meeting" %>
   </div>
   <div class="clear"></div>
-  <div id="files-container">
+
     <span class="lime-green-submenu">Files</span><br/>
+  <div id="files-container">
+    <% form_for @uploaded_file, :as => :uploaded_file, :url => uploaded_files_path, :html => {:multipart => true} do |form| %>
+      <%= form.file_field :asset %>
+      <%= form.submit %>
+    <% end %>
+    <ul id="files-list">
+      <% current_user.uploaded_files.each do |file| %>
+        <li class="single-file">
+          <%= link_to(image_tag(file.asset.url(:thumb)), file.asset.url, :class => 'floatL') %>
+          <ul>
+            <span class="file-label"><%= file.asset_file_name %></span><br/>
+            <span class="file-label">By: <%= file.user.name %></span><br/>
+            <span class="file-label">On: <%= fmt_two_digit(file.created_at) %></span>
+          </ul>
+        </li>
+      <% end %>
+    </ul>
+    <div id="slider"></div>
   </div>
   <div id="latest-comments">
     <span class="lime-green-submenu">Latest Comments</span><br/>
@@ -35,3 +55,4 @@
     <span class="lime-green-submenu">Latest Status Updates</span><br/>
   </div>
 </div>
+

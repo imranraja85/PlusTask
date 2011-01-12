@@ -19,6 +19,7 @@ Manageme::Application.routes.draw do
   resources :users
   resources :events
   resources :home
+  resources :uploaded_file
   # Sample resource route with options:
   #   resources :products do
   #     member do
