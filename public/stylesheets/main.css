@@ -85,7 +85,7 @@ table {border-collapse: collapse;width: 100%;}
 .big-header {font-size: 26px;letter-spacing:1px; background-color color: red} 
 
 .small-header{font-size: 14px; color:red }
-.blue-header{color:#4B4B4B; font-weight:bold; font-size:20px; padding: 5px 0px 0px 5px;border-top:3px solid #C2e0f2; margin-bottom:15px; #background:#ecfaff;}
+.blue-header{color:#4B4B4B; font-weight:bold; font-size:20px; padding: 5px 0px 0px 5px;border-top:3px solid #C2e0f2; margin-bottom:5px; #background:#ecfaff;}
 .green-header{color:#4B4B4B; font-weight:bold; font-size:20px; padding:10px;border-top:3px solid #AECD39; margin-bottom:15px; background:#f0f6e4;}
 .lime-green-header{color:#aecd39;font-family:"Myriad Pro";font-size:24px; font-weight: bold}
 .lime-green-submenu{color:#aecd39;font-family:"Myriad Pro";font-size:18; font-weight: bold}

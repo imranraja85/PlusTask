@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(:version => 20110112054935) do
     t.string    "title",                               :default => "", :null => false
     t.string    "department",           :limit => 128
     t.string    "email",                               :default => "", :null => false
+    t.string    "phone",                :limit => 100, :default => "", :null => false
     t.string    "encrypted_password",   :limit => 128, :default => "", :null => false
     t.string    "password_salt",                       :default => "", :null => false
     t.string    "reset_password_token"
