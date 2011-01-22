@@ -1,0 +1,6 @@
+/* view in projects */
+.tasks-container {width: 100%; height: 50px}
+.task-grid {width:290px;float:left;height: 40px;padding: 2px}
+#tasks-in-progress {border-left: 1px dashed black;border-right: dashed 1px black} 
+.task-grid h1{text-align: center}
+

@@ -1,0 +1,15 @@
+<h1 class='lime-green-header'><%= @project.name %> Tasks
+  <%= link_to "Add a new task", new_task_path, :class => "floatR" %>
+</h1>
+<p>Assign tasks to people</p>
+<div class="tasks-container">
+  <div class="task-grid tasks-to">
+    <h1>To Do</h1>
+  </div>
+  <div class="task-grid" id="tasks-in-progress">
+    <h1>In Progress</h1>
+  </div>
+  <div class="task-grid tasks-completed">
+    <h1>Completed</h1>
+  </div>
+</div>

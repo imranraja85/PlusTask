@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110113054129) do
+ActiveRecord::Schema.define(:version => 20110122064521) do
 
   create_table "comments", :force => true do |t|
     t.integer   "commentable_id",                                          :null => false
@@ -43,6 +43,14 @@ ActiveRecord::Schema.define(:version => 20110113054129) do
     t.string    "status",        :limit => 0,  :default => "Requirement Gathering"
     t.integer   "created_by_id", :limit => 2
     t.integer   "owner_id",      :limit => 2
+    t.timestamp "updated_at"
+    t.timestamp "created_at"
+  end
+
+  create_table "tasks", :force => true do |t|
+    t.integer   "created_by",                                    :null => false
+    t.integer   "assigned_to",                                   :null => false
+    t.string    "status",      :limit => 0, :default => "To Do"
     t.timestamp "updated_at"
     t.timestamp "created_at"
   end

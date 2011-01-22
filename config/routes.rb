@@ -16,9 +16,11 @@ Manageme::Application.routes.draw do
   resources :projects do
     member do
       get :people
+      get :tasks
     end
   end
 
+  resources :tasks
   resources :users
   resources :events
   resources :home

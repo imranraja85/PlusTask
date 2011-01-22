@@ -59,4 +59,12 @@ class ProjectsController < ApplicationController
       format.js {render :layout => false}
     end
   end
+  
+  def tasks
+    @task = Task.all
+    @project = Project.find(params[:id])
+    respond_to do |format|
+      format.js
+    end
+  end
 end

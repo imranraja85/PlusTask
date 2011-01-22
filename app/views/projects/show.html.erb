@@ -1,4 +1,5 @@
 <%= javascript_include_tag 'app/project_details' %>
+<%= javascript_include_tag 'app/projects.js' %>
 <%= stylesheet_link_tag 'rest/projects.css' %>
 
 <div id="projects-container">
@@ -6,9 +7,9 @@
 
     <div id="mini-nav">
       <ul class="quick-links">
-        <li><%= link_to "Overview", project_path(@project), :remote => true %></li>
-        <li><%= link_to "People", people_project_path(@project), :remote => true %></li>
-        <li><a href="#tasks">Tasks</a></li>
+        <li class="active"><%= link_to "Overview", project_path(@project), :remote => true%></li>
+        <li><%= link_to "People", people_project_path(@project), :remote => true%></li>
+        <li><%= link_to "Tasks", tasks_project_path(@project), :remote => true %></li>
         <li><a href="#statuses">Status Updates</a></li>
         <li><a href="#files">Files</a></li>
       </ul>
