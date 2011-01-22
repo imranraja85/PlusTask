@@ -16,7 +16,7 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
     respond_to do |format|
       format.html
-      format.js 
+      format.js {render :layout => false}
     end
   end
 
@@ -33,7 +33,7 @@ class ProjectsController < ApplicationController
     @project = Project.new(params[:project].merge!(:created_by_id => current_user.id))
     if @project.save
       flash[:notice] = "Successfully added a new project!"
-      redirect_to root_url
+      redirect_to project_path(@project)
     else
       flash[:notice] = "failed to create project"
       redirect_to root_url
@@ -48,6 +48,15 @@ class ProjectsController < ApplicationController
     else
       flash[:error] = "Failed to update project"
       redirect_to root_url
+    end
+  end
+
+  def people
+    @project = Project.find(params[:id])
+    @users = @project.users
+    #render :partial => 'users/users_on_project'
+    respond_to do |format|
+      format.js {render :layout => false}
     end
   end
 end

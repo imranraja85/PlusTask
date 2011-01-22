@@ -1,8 +1,8 @@
 class CreateUploadedFiles < ActiveRecord::Migration
   def self.up
     up_sql = %Q(CREATE TABLE `uploaded_files` (
-                `id` SMALLINT(5) UNSIGNED NOT NULL AUTO_INCREMENT,           
-                `user_id` SMALLINT(5) UNSIGNED COMMENT 'foreign key for user',
+                `id` INT(11) UNSIGNED NOT NULL AUTO_INCREMENT,           
+                `user_id` INT(11) UNSIGNED COMMENT 'foreign key for user',
                 `asset_file_name` varchar(255) NOT NULL default '' COMMENT 'Description of the project',
                 `asset_content_type` varchar(255) NOT NULL default '' COMMENT 'Description of the project',
                 `asset_file_size` INT(11) UNSIGNED COMMENT 'ID of the project owner',

@@ -10,7 +10,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110112054935) do
+ActiveRecord::Schema.define(:version => 20110113054129) do
+
+  create_table "comments", :force => true do |t|
+    t.integer   "commentable_id",                                          :null => false
+    t.string    "commentable_type"
+    t.string    "status",           :limit => 0, :default => "In Process"
+    t.timestamp "updated_at"
+    t.timestamp "created_at"
+  end
 
   create_table "events", :force => true do |t|
     t.string    "name"
@@ -24,7 +32,7 @@ ActiveRecord::Schema.define(:version => 20110112054935) do
 
   create_table "project_user", :force => true do |t|
     t.integer   "project_id", :limit => 2
-    t.integer   "user_id",    :limit => 2
+    t.integer   "user_id"
     t.timestamp "updated_at"
     t.timestamp "created_at"
   end
@@ -40,9 +48,9 @@ ActiveRecord::Schema.define(:version => 20110112054935) do
   end
 
   create_table "uploaded_files", :force => true do |t|
-    t.integer   "user_id",            :limit => 2
-    t.string    "asset_file_name",                 :default => "", :null => false
-    t.string    "asset_content_type",              :default => "", :null => false
+    t.integer   "user_id"
+    t.string    "asset_file_name",    :default => "", :null => false
+    t.string    "asset_content_type", :default => "", :null => false
     t.integer   "asset_file_size"
     t.datetime  "asset_updated_at"
     t.timestamp "updated_at"

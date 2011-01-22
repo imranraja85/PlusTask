@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  layout "manageme"
+  #layout "manageme"
+  layout "lightbox", :except => [:index]
 
   def index
     @event = Event.new
@@ -12,10 +13,16 @@ class UsersController < ApplicationController
    # if params[:send]
    #   UserMailer.welcome_user(User.first,params[:date]).deliver
    # end
+    render :layout => 'manageme'
   end
 
   def new
     @user = User.new
+  end
+
+  def show
+    @user = User.find(params[:id])
+    render :template => 'layouts/lightbox_close', :locals=> {:lightbox_message => "User Updated"}
   end
 
   def create

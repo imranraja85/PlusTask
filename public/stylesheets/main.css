@@ -28,6 +28,13 @@ body{min-width:960px}.container_12,.container_16{margin-left:auto;margin-right:a
 
 #content {padding:10px;}
 
+/* lightbox styles */
+#simplemodal-container a.modalCloseImg{background:url(/images/x.png) no-repeat;width:25px;height:29px;display:inline;z-index:3200;position:absolute;top:-8px;left:-6px;cursor:pointer;}
+#simplemodal-overlay{background-color:#000;opacity:0.7 !important;}
+#simplemodal-container{background-color:#fff;-moz-border-radius:10px;-webkit-border-radius:10px;border-radius:10px;padding:25px;}
+.ie7 #my-account #spinner {top:220px;}
+body#iframe {background-image:none;background-color:#fff;}
+
 /* default link styles */
 a {color: #166999;text-decoration:none;}
 
@@ -38,49 +45,19 @@ a:hover {color: #3a87a2;}
 /* default table styles */
 table {border-collapse: collapse;width: 100%;}
 
-.rounded-corner th {
-  background-attachment:initial;
-  background-clip:initial;
-  background-color:#a1c658;
-  background-image:initial;
-  background-origin:initial;
-  color: #000000;
-  text-align: left;
-  font-size:15px;
-  font-weight:700;
-  padding-bottom:8px;
-  padding-left:8px;
-  padding-right:8px;
-  padding-top:8px;
-}
+.compact-table th {font: bold 11px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;color: #6D929B;border-right: 1px solid #C1DAD7;border-bottom: 1px solid #C1DAD7;border-top: 1px solid #C1DAD7;letter-spacing: 2px;text-transform: uppercase;text-align: left;padding: 6px 6px 6px 12px;background: #CAE8EA url(images/bg_header.jpg) no-repeat;}
 
-.rounded-corner td {
-  background-attachment:initial;
-  background-clip:initial;
-  background-color:#ecf6d9;
-  background-image:initial;
-  background-origin:initial;
-  background-position:initial initial;
-  background-repeat:initial initial;
-  border-top-color:#FFFFFF;
-  border-top-style:solid;
-  border-top-width:1px;
-  color:#13374c;
-  padding-bottom:8px;
-  padding-left:8px;
-  padding-right:8px;
-  padding-top:8px;
-  font-size: 13px;
-}
+.compact-table tr.even {background-color: #FFFFFF;}
+.compact-table tr.odd {background-color: #F5FAFA;}
 
-.rounded-corner tr:hover {background-color: #B9C9FE;}
+.compact-table td {padding: 6px 6px 6px 12px}
 
 /*reusable classes */
 .hidden {display: none;}
 .clear {clear: both;}
 .floatL {float:left;}
 .floatR {float:right;}
-.data-label{font-weight: bold}
+.data-label{}
 .eighteen {font-size: 18px}
 .big-header {font-size: 26px;letter-spacing:1px; background-color color: red} 
 
@@ -90,55 +67,7 @@ table {border-collapse: collapse;width: 100%;}
 .lime-green-header{color:#aecd39;font-family:"Myriad Pro";font-size:24px; font-weight: bold}
 .lime-green-submenu{color:#aecd39;font-family:"Myriad Pro";font-size:18; font-weight: bold}
 
-/* ### Projects Index ### */
-.project-details{padding: 10px;background-color: #ffffff;}
-.project-info {background-color: #f3f6ed;}
-.employees{padding: 5px;margin-right: 300px;width: 200px;float:right;}
-.submenu-links a {font-size: 13px; color: black}
-
-/* ## DETAILED PROJECT VIEW ## */
-/* projects left hand nav */
-#projects-list {border-right: dashed 1px;width:219px;float:left;height: 600px;overflow:hidden}
-#projects-list li {list-style-type:none}
-#projects-list li a{padding: 10px 40px;}
-.project-in-list {background-color:#f9f9f9;height: 30px;padding-top:12px;text-align:center}
-.selected-project {background-color: #f4f4f4}
-
-/*projects container*/
-#projects-container {padding: 0px 10px 10px 10px; background-color: #ffffff;float:left;width:700px;height:600px}
-#mini-nav {padding: 0px 0px 5px 5px;font-size: 13px}
-.quick-links {list-style: none}
-.quick-links li {display:inline; padding: 0px 5px 0px 5px}
-.quick-links a {border-bottom: 1px dashed}
-.project-description {width: 400px}
-#project-details {width: 400px;float:left}
-#project-details .data-label {width: 100px;text-align:right; white-space: nowrap; padding-right:10px;vertical-align:baseline}
-
-#project-people {width: 200px;float:right;background-color: #fff;padding:10px}
-#people-on-project-header {margin-left:80px}
-#latest-comments {background-color: #fff; width: 300px; height: 100px;float:left;padding:10px;margin:10px}
-#latest-status-updates {background-color: #fff; width: 300px;height: 100px;float:left;padding:10px;margin:10px}
-
-#files-container {background-color: #fff; height: 190px;}
-/*
-#files-list {overflow:none;list-style:none;white-space:nowrap;position:absolute;padding:0;margin:0}
-#files-container ul li {display:inline}
-.slider {width: 542px;height: 17px;margin-top: 140px;margin-left: 5px;padding: 1px;position: relative;background: url(http://static.jqueryfordesigners.com/demo/images/productbrowser_scrollbar_20070622.png) no-repeat;}
-
-.single-file {padding:10px;width: 120px;height: 130px;background-color: #F0F0F0;float:left;margin:10px}
-#file-icon {float:left}
-.file-label {font-size: 12px;float:left; padding: 0px 10px} */
-/*** END OF DETAILED PROJECT VIEW ***/
-
-/* ### PROJECT */
 /* ### DASHBOARD ### */
 #dashboard-feed {height: 200px;background-color: #ccc;}
 #dashboard-feed h1 {padding:10px;border-bottom: 1px solid}
-
-.compact-table th {font: bold 11px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;color: #6D929B;border-right: 1px solid #C1DAD7;border-bottom: 1px solid #C1DAD7;border-top: 1px solid #C1DAD7;letter-spacing: 2px;text-transform: uppercase;text-align: left;padding: 6px 6px 6px 12px;background: #CAE8EA url(images/bg_header.jpg) no-repeat;}
-
-.compact-table tr.even {background-color: #FFFFFF;}
-.compact-table tr.odd {background-color: #F5FAFA;}
-
-.compact-table td {padding: 6px 6px 6px 12px}
 

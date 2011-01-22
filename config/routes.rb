@@ -14,10 +14,11 @@ Manageme::Application.routes.draw do
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   resources :projects do
-    collection do
-      get :detailed_view
+    member do
+      get :people
     end
   end
+
   resources :users
   resources :events
   resources :home

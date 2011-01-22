@@ -1,7 +1,7 @@
 class CreateProjects < ActiveRecord::Migration
   def self.up
     up_sql = %Q(CREATE TABLE `projects` (
-                `id` SMALLINT(5) UNSIGNED NOT NULL AUTO_INCREMENT,           
+                `id` INT(11) UNSIGNED NOT NULL AUTO_INCREMENT,           
                 `name` varchar(80) NOT NULL default '' COMMENT 'Name of the Project',
                 `description` varchar(255) NOT NULL default '' COMMENT 'Description of the project',
                 `status` enum ('Requirement Gathering', 'Design', 'Coding', 'Testing', 'Live') DEFAULT 'Requirement Gathering' COMMENT 'Status of project',

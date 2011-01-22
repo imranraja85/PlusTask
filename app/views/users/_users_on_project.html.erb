@@ -4,7 +4,9 @@
   <thead>
     <tr>
       <th>Name</th>
+      <th>Title</th>
       <th>Email</th>
+      <th>Phone</th>
       <th>Department</th>
     </tr>
   </thead>
@@ -12,7 +14,9 @@
     <% @project.users.each do |user| %>
       <tr>
         <td><%= user.name %></td>
+        <td><%= user.title %></td>
         <td><%= user.email %></td>
+        <td><%= user.phone %></td>
         <td><%= user.department %></td>
       </tr>
     <% end %>

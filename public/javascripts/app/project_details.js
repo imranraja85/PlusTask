@@ -1,6 +1,1 @@
 $ = jQuery;
-
-$(function(){
-  $("#accordion").accordion();
-});
-

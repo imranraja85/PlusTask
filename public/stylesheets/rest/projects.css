@@ -1,0 +1,45 @@
+/***********************/
+/* Styles for projects */
+/***********************/ 
+
+/* Projects Index  */
+.project-details{padding: 10px;background-color: #ffffff;}
+.project-info {background-color: #f3f6ed;}
+.employees{padding: 5px;margin-right: 300px;width: 200px;float:right;}
+.submenu-links a {font-size: 13px; color: black}
+
+/* projects left hand nav */
+#projects-list {width:220px;float:left;height: 600px;overflow:hidden}
+#projects-list li {list-style-type:none}
+#projects-list li a{padding: 10px 40px;}
+.project-in-list {background-color:#f9f9f9;height: 30px;padding-top:12px;text-align:center}
+.selected-project {background-color: #f4f4f4}
+
+/*projects container*/
+#projects-container {float:left;width:900px;height:600px}
+#project-contents{padding: 5px;border: 1px solid #C3D8E4}
+#mini-nav {font-size: 13px}
+/*.quick-links {list-style: none}
+.quick-links li {display:inline; padding: 0px 5px 0px 5px}
+.quick-links a {border-bottom: 1px dashed}*/
+.quick-links {margin-top: 1px;}
+.quick-links a {text-decoration:none; font-size: 13px; font-weight: normal;}
+.quick-links ul { display: inline; margin: 0px; padding: 0px; float: left;}
+.quick-links li { background-color:#c7dbe6;width: 150px; display:inline; padding: 3px 5px; margin: 0px; text-align: center; -moz-border-radius-topright:3px;-webkit-border-top-right-radius:3px;-moz-border-radius-topleft:3px;-webkit-border-top-left-radius:3px;}
+.quick-links li.active { background: #ddd; border: 1px solid #aaa; border-bottom: 0px;}
+.quick-links a.active { color: #333;}
+
+
+
+.project-description {width: 400px}
+#project-details {width: 100%;float:left;}
+#project-details .data-label {width: 100px;text-align:right; white-space: nowrap; padding-right:10px;vertical-align:baseline}
+
+
+#project-people {width: 200px;float:right;background-color: #fff;padding:10px}
+#people-on-project-header {margin-left:80px}
+#latest-comments {background-color: #fff; width: 300px; height: 100px;float:left;padding:10px;margin:10px}
+#latest-status-updates {background-color: #fff; width: 300px;height: 100px;float:left;padding:10px;margin:10px}
+#files-container {background-color: #fff; height: 190px;}
+
+h2{display:inline;font-size: 12px; font-family:'lucida Grande'; letter-spacing: 1px; text-transform:uppercase;font-weight:bold}

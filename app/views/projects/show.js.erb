@@ -1,3 +1,1 @@
-$("#project-details-<%= @project.id %>").html("<%= escape_javascript(render("show")) %>");
-$("#project-details-<%= @project.id %>").slideToggle("fast");
-$(".hidden-<%= @project.id %>").removeClass('hidden');
+$('#project-contents').html("<div class='project-container'><%= escape_javascript(render :partial => 'overview') %></div>");

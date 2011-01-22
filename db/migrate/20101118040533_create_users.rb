@@ -1,7 +1,7 @@
 class CreateUsers < ActiveRecord::Migration
   def self.up
     up_sql = %Q(CREATE TABLE `users` (
-                `id` SMALLINT(5) UNSIGNED NOT NULL AUTO_INCREMENT,           
+                `id` INT(11) UNSIGNED NOT NULL AUTO_INCREMENT,           
                 `name` varchar(80) NOT NULL default '',
                 `company` varchar(80) NOT NULL default '',
                 `title` varchar(255) NOT NULL default '',
