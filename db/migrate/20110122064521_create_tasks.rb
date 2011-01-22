@@ -4,6 +4,7 @@ class CreateTasks < ActiveRecord::Migration
                 `id` SMALLINT(11) UNSIGNED NOT NULL AUTO_INCREMENT,           
                 `created_by` INT(11) UNSIGNED NOT NULL,           
                 `assigned_to` INT(11) UNSIGNED NOT NULL,           
+                `project_id` INT(11) UNSIGNED NOT NULL,           
                 `status` enum ('To Do','In Process','Completed') DEFAULT 'To Do' COMMENT 'Status of meeting',
                 `updated_at` TIMESTAMP NULL COMMENT 'Datetime of latest update',
                 `created_at` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Datetime of creation.',

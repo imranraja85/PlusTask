@@ -56,6 +56,7 @@ class ProjectsController < ApplicationController
     @users = @project.users
     #render :partial => 'users/users_on_project'
     respond_to do |format|
+      format.html {render :action => 'show'}
       format.js {render :layout => false}
     end
   end
@@ -64,7 +65,8 @@ class ProjectsController < ApplicationController
     @task = Task.all
     @project = Project.find(params[:id])
     respond_to do |format|
-      format.js
+      format.html {render :action => 'show'}
+      format.js {@tasks = @project.tasks}
     end
   end
 end

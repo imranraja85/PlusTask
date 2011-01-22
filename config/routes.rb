@@ -20,7 +20,12 @@ Manageme::Application.routes.draw do
     end
   end
 
-  resources :tasks
+  resources :tasks do
+    member do
+      get :move_to_in_progress
+    end
+  end
+
   resources :users
   resources :events
   resources :home

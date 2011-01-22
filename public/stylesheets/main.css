@@ -60,6 +60,8 @@ table {border-collapse: collapse;width: 100%;}
 .data-label{}
 .eighteen {font-size: 18px}
 .big-header {font-size: 26px;letter-spacing:1px; background-color color: red} 
+.strong {font-weight: bold}
+.weak {font-weight: normal; color: #989898}
 
 .small-header{font-size: 14px; color:red }
 .blue-header{color:#4B4B4B; font-weight:bold; font-size:20px; padding: 5px 0px 0px 5px;border-top:3px solid #C2e0f2; margin-bottom:5px; #background:#ecfaff;}

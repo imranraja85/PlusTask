@@ -17,11 +17,8 @@
 
 /*projects container*/
 #projects-container {float:left;width:900px;height:600px}
-#project-contents{padding: 5px;border: 1px solid #C3D8E4}
+#project-contents{height: 700px;padding: 5px;border: 1px solid #C3D8E4}
 #mini-nav {font-size: 13px}
-/*.quick-links {list-style: none}
-.quick-links li {display:inline; padding: 0px 5px 0px 5px}
-.quick-links a {border-bottom: 1px dashed}*/
 .quick-links {margin-top: 1px;}
 .quick-links a {text-decoration:none; font-size: 13px; font-weight: normal;}
 .quick-links ul { display: inline; margin: 0px; padding: 0px; float: left;}

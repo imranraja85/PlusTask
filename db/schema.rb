@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(:version => 20110122064521) do
   create_table "tasks", :force => true do |t|
     t.integer   "created_by",                                    :null => false
     t.integer   "assigned_to",                                   :null => false
+    t.integer   "project_id",                                    :null => false
     t.string    "status",      :limit => 0, :default => "To Do"
     t.timestamp "updated_at"
     t.timestamp "created_at"

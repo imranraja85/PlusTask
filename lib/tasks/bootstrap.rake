@@ -14,5 +14,6 @@ namespace :bootstrap do
     Seed::table_from_csv('projects')
     Seed::table_from_csv('users')
     Seed::table_from_csv('project_user')
+    Seed::table_from_csv('tasks')
   end
 end

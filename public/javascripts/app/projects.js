@@ -10,6 +10,17 @@ jQuery(document).ready(function(){
 
      previous_link.removeClass("active");
      current_link.parent().addClass("active");
+     history.pushState(null, "", this.href);
+  });
+
+  $(window).bind("popstate", function(){
+     var current_link = $(this); // jQuery wrapper for clicked element
+     var previous_link = $('.active');
+
+     previous_link.removeClass("active");
+     current_link.parent().addClass("active");
+
+    $.getScript(location.href);
 
   });
 });
