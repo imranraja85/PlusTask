@@ -5,6 +5,11 @@ module ApplicationHelper
     date.strftime("%b %d %Y")
   end
 
+  def fmt_us(date)
+    raise "Must pass date object" if date.nil?
+    date.strftime("%m/%d/%y")
+  end
+
   def fmt_two_digit(date)
     raise "Must pass date object" if date.nil?
     date.strftime("%m/%d/%y")

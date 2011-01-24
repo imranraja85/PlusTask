@@ -1,0 +1,23 @@
+<% if @task.errors.any? %>
+  /* hide the flash notice div */
+  $("#flash_notice").hide(300);
+
+  /* update the html of hte div post_errors with the new one */
+
+  /* show the div post errors */
+<% else %>
+  /* hide the errors post_errors */
+
+  /* update the html of the div flash_notice with teh new one */
+
+  /*show the flash notice div */
+  $("#flash_notice").html("<%= escape_javascript(flash[:notice])%>");
+
+  /*clear the entire form*/
+  $("#new_task").remove();
+
+  /* replace the html of the tasks with the updated new one */
+  $('#project-contents').html("<div class='project-container'><%= escape_javascript(render(:partial => 'tasks/tasks')) %></div>");
+
+
+<% end %>

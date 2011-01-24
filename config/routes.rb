@@ -18,11 +18,13 @@ Manageme::Application.routes.draw do
       get :people
       get :tasks
     end
+    resource :task
   end
 
   resources :tasks do
     member do
       get :move_to_in_progress
+      get :move_to_completed
     end
   end
 

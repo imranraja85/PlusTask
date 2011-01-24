@@ -1,0 +1,5 @@
+<span class="task-name strong"><%= task.title %></span>
+<span class="task-created weak"><%= fmt_us(task.created_at) %></span>
+<span class="task-person weak">Assigned To <%= task.assigned_to %></span>
+<span class="task-difficulty weak">Difficulty <%= task.difficulty %></span>
+<span class="task-start"><%= display_link_based_on_task_status(task) %></span>

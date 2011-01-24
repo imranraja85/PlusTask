@@ -2,6 +2,8 @@ class CreateTasks < ActiveRecord::Migration
   def self.up
     up_sql = %Q(CREATE TABLE `tasks` (
                 `id` SMALLINT(11) UNSIGNED NOT NULL AUTO_INCREMENT,           
+                `title` VARCHAR(255),
+                `difficulty` INT(11) UNSIGNED NOT NULL,           
                 `created_by` INT(11) UNSIGNED NOT NULL,           
                 `assigned_to` INT(11) UNSIGNED NOT NULL,           
                 `project_id` INT(11) UNSIGNED NOT NULL,           

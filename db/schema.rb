@@ -48,6 +48,8 @@ ActiveRecord::Schema.define(:version => 20110122064521) do
   end
 
   create_table "tasks", :force => true do |t|
+    t.string    "title"
+    t.integer   "difficulty",                                    :null => false
     t.integer   "created_by",                                    :null => false
     t.integer   "assigned_to",                                   :null => false
     t.integer   "project_id",                                    :null => false

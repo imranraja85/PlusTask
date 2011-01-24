@@ -1,31 +1,42 @@
 <%= stylesheet_link_tag 'tasks' %> 
 <p>Create and assign tasks to people and view daily progress</p>
+<%= link_to "Add a task", new_project_task_path(@project), :remote => true %>
+<div id="test"></div>
 <div class="tasks-container">
-  <div class="task-grid">
-    <h1>To Do</h1>
+  <div class="task-grid tasks-first">
+    <h1>Tasks To Do</h1>
     <ul class="tasks-list">
-        <li>
-          <span class="task-name strong">Build store sales page</span>
-          <span class="task-created weak">01/24/11</span>
-          <span class="task-person weak">Assigned To: Imran Raja</span>
-          <span class="task-difficulty weak">Difficulty: 4</span>
-          <span class="task-start"><%= link_to("start", move_to_in_progress_task_path(Task.first), :remote => true, :id => "frack")%></span>
-        </li>
-        <li>
-          <span class="task-name strong">Create Audit Log</span>
-          <span class="task-created weak" title="Date task was added">01/24/11</span>
-          <span class="task-person weak">Assigned To: Bob Barker</span>
-          <span class="task-difficulty weak">Difficulty: 4</span>
-          <span class="task-start">Start Task</span>
-        </li>
+      <% if @tasks["To Do"] %>
+        <% @tasks["To Do"].each do |task| %>
+          <li>
+            <%= render :partial => 'tasks/task', :locals => {:task => task} %>
+          </li>
+        <% end %>
+      <% end %>
     </ul>
   </div>
   <div class="task-grid" id="tasks-in-progress">
-    <h1>In Progress</h1>
+    <h1>Tasks In Progress</h1>
     <ul class="tasks-in-progress-list">
+      <% if @tasks["In Process"] %>
+        <% @tasks["In Process"].each do |task| %>
+          <li>
+            <%= render :partial => 'tasks/task', :locals => {:task => task} %>
+          </li>
+        <% end %>
+      <% end %>
     </ul>
   </div>
-  <div class="task-grid tasks-completed">
-    <h1>Completed</h1>
+  <div class="task-grid tasks-last">
+    <h1>Tasks Completed</h1>
+    <ul class="tasks-completed-list">
+      <% if @tasks["Completed"] %>
+        <% @tasks["Completed"].each do |task| %>
+          <li>
+            <%= render :partial => 'tasks/task', :locals => {:task => task} %>
+          </li>
+        <% end %>
+      <% end %>
+    </ul>
   </div>
 </div>

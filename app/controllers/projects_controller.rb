@@ -54,7 +54,6 @@ class ProjectsController < ApplicationController
   def people
     @project = Project.find(params[:id])
     @users = @project.users
-    #render :partial => 'users/users_on_project'
     respond_to do |format|
       format.html {render :action => 'show'}
       format.js {render :layout => false}
@@ -62,11 +61,12 @@ class ProjectsController < ApplicationController
   end
   
   def tasks
-    @task = Task.all
     @project = Project.find(params[:id])
+    @tasks = @project.tasks.order("created_at desc").group_by(&:status) 
+
     respond_to do |format|
       format.html {render :action => 'show'}
-      format.js {@tasks = @project.tasks}
+      format.js 
     end
   end
 end

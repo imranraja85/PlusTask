@@ -1,0 +1,38 @@
+<div id="new_task">
+  <%= form_for @task, :remote => true do |f| %>
+    <fieldset>
+    <legend>New Task</legend>
+    <ol>
+      <li>
+        <%= f.label :title %>
+        <%= f.text_field :title %>
+      </li>
+
+      <li>
+        <%= f.label :difficulty%>
+        <%= f.text_field :difficulty%>
+      </li>
+
+      <li>
+        <%= f.label :assigned_to%>
+        <%= f.text_field :assigned_to%>
+      </li>
+
+      <li>
+        <%= f.label :project_id%>
+        <%= f.text_field :project_id%>
+      </li>
+
+      <li>
+        <%= f.label :created_by %>
+        <%= f.text_field :created_by%>
+      </li>
+
+      <li>
+        <%= f.submit "Create this task" %>
+      </li>
+    </ol>
+  </legend>
+  </fieldset>
+  <% end %>
+</div>
