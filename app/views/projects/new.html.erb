@@ -1,4 +1,15 @@
-<%= form_for @project, new_project_path do |f| %>
-  <%= render :partial => 'project', :locals => {:f => f} %>
-  <%= f.submit %>
-<% end %>
+<%= stylesheet_link_tag 'rest/projects' %>
+<h1 class="lime-green-header">New Project</h1>
+
+<div id="new-project">
+  <%= form_for @project, new_project_path do |f| %>
+    <fieldset>
+      <legend>New Project</legend>
+        <ol>
+          <%= render :partial => 'form', :locals => {:f => f} %>
+          <%= f.submit "Create Project" %>
+          <%= link_to "Cancel", root_path %>
+        </ol>
+    </fieldset>
+  <% end %>
+</div>

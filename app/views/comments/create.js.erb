@@ -1,0 +1,2 @@
+$("#new-task").html("<%= escape_javascript(render :partial => 'tasks/show') %>");
+$("#new-task").find("input[type='text']").val("");

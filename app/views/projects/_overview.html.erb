@@ -1,9 +1,34 @@
-<div id="details">
-  <table id="project-details">
-    <tr><td class="data-label">Project Owner: </td><td><%= @project.owner.name %></tr>
-    <tr><td class="data-label">Created On: </td><td><%= fmt_month_day_year(@project.created_at) %></td></tr>
-    <tr><td class="data-label">Status: </td><td><%= @project.status %></td></tr>
-    <tr><td class="data-label">Description: </td><td><%= @project.description %></td></tr>
-  </table>
-  <div class="clear"></div>
+<span class="lime-green-header"><%= @project.name %></span><span class="project-status"><%= @project.status %></span>
+<div class="clear"></div>
+<div class="overview-project-description"><%= @project.description %></div>
+
+<div id="overview-actions">
+  <ul>
+    <li><%= button_to "+ Add a task", tasks_project_path(@project), :method => :get %></li>
+    <li><%= button_to "+ Add a person", new_user_path %></li>
+    <li><%= button_to "+ Upload a file", new_user_path %></li>
+  </ul>
+</div>
+
+
+<div class="clear"></div>
+<div class="overview-subcontext">
+  <h2>Recent Tasks</h2><br/>
+  <% @project.tasks.each do |task| %>
+    <%= task.name %><br/>
+  <% end %>
+</div>
+
+<div class="overview-subcontext">
+  <h2>Recent People</h2><br/>
+  <% @project.users.each do |user| %>
+    <%= user.name %><br/>
+  <% end %>
+</div>
+
+<div class="overview-subcontext">
+  <h2>Recent Comments</h2><br/>
+  <% @project.users.each do |user| %>
+    <%= user.name %><br/>
+  <% end %>
 </div>

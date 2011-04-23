@@ -4,13 +4,12 @@
 
 <div id="projects-container">
     <div id="mini-nav">
-      <h1 class='lime-green-header'><%= @project.name %></h1>
       <ul class="quick-links">
-        <li class="active"><%= link_to "Overview", project_path(@project), :remote => true%></li>
-        <li><%= link_to "People on this Project", people_project_path(@project), :remote => true%></li>
-        <li><%= link_to "Tasks", tasks_project_path(@project), :remote => true %></li>
-        <li><a href="#statuses">Status Updates</a></li>
-        <li><a href="#files">Files</a></li>
+        <li id="menu-overview" class="active"><%= link_to "Overview", project_path(@project), :remote => true%></li>
+        <li id="menu-people-on-this-project"><%= link_to "People on this Project", people_project_path(@project), :remote => true%></li>
+        <li id="menu-tasks"><%= link_to "Tasks", tasks_project_path(@project), :remote => true %></li>
+        <li id="menu-status-updates"><a href="#statuses">Status Updates</a></li>
+        <li id="menu-files"><a href="#files">Files</a></li>
       </ul>
     </div>
     <div id="project-contents">

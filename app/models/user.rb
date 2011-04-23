@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
   has_many :projects, :through => :project_user
   has_many :uploaded_files
   has_many :tasks, :foreign_key => :assigned_to
+  has_many :comments, :as => :commentable
 
   USER_TYPES = [:ADMIN, :HEADMANAGER, :MANAGER, :EMPLOYEE]
   USER_ACTIONS = ["email","process"]

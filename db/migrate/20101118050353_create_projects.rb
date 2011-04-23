@@ -4,7 +4,7 @@ class CreateProjects < ActiveRecord::Migration
                 `id` INT(11) UNSIGNED NOT NULL AUTO_INCREMENT,           
                 `name` varchar(80) NOT NULL default '' COMMENT 'Name of the Project',
                 `description` varchar(255) NOT NULL default '' COMMENT 'Description of the project',
-                `status` enum ('Requirement Gathering', 'Design', 'Coding', 'Testing', 'Live') DEFAULT 'Requirement Gathering' COMMENT 'Status of project',
+                `status` varchar(255) DEFAULT NULL COMMENT 'Status of project',
                 `created_by_id` SMALLINT(5) UNSIGNED COMMENT 'ID of user that created this project',           
                 `owner_id` SMALLINT(5) UNSIGNED COMMENT 'ID of the project owner',
                 `updated_at` TIMESTAMP NULL COMMENT 'Datetime of latest update',

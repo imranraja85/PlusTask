@@ -1,0 +1,20 @@
+<li>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+</li>
+<li>
+  <%= f.label :description %>
+  <%= f.text_area :description, :rows => 10, :cols => 44 %>
+</li>
+<li>
+  <%= f.label :owner_id, "Project Owner" %>
+  <%= f.select :owner_id, options_from_collection_for_select(@users,"id","name"), {:prompt => "Select a person", :include_blank => true} %>
+</li>
+<li>
+  <%= f.label :status %>
+  <%= f.select :status, Project::STATUS %>
+</li>
+
+<li>
+  <%#= select_tag @users, options_from_collection_for_select(@users,"id","name") %>
+</li>

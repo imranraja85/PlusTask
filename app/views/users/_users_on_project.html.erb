@@ -9,14 +9,18 @@
     </tr>
   </thead>
   <tbody>
-    <% @project.users.each do |user| %>
-      <tr>
-        <td><%= user.name %></td>
-        <td><%= user.title %></td>
-        <td><%= user.email %></td>
-        <td><%= user.phone %></td>
-        <td><%= user.department %></td>
-      </tr>
+    <% if @project.users.empty? %>
+      <tr colspan='5'><td>No people have been assigned to this project</td></tr>
+    <% else %>
+      <% @project.users.each do |user| %>
+        <tr>
+          <td><%= user.name %></td>
+          <td><%= user.title %></td>
+          <td><%= user.email %></td>
+          <td><%= user.phone %></td>
+          <td><%= user.department %></td>
+        </tr>
+      <% end %>
     <% end %>
   </tbody>
 </table>

@@ -2,9 +2,6 @@
    = Description
    The following code produces a simple object to encapsulate lightbox javascript logic.
 
-   = Change log
-   [2010-07-14 -- RT] Initial Creation
-
    = Dependencies
    Depends on the:  jquery.simplemodal-1.3 for lightbox creation.
                     ba-bbq.jquery for deserializing query strings.

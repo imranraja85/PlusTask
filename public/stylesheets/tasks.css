@@ -1,21 +1,37 @@
 /* view in projects */
 .tasks-container {width: 100%; height: 50px;}
-.task-grid {width:290px;float:left;height: 600px;padding: 2px}
-.task-grid h1 {text-align: center; color:#fff; font-size: 20px;border-top-left-radius: 3px 3px; border-top-right-radius: 3px 3px;background-color:#476573;}
-.task-grid li {border: 1px solid black; display:block; height: 80px; padding:5px; background-color: #F8F8F8;margin-bottom: 9px;margin-top: 5px}
+.task-grid {width:286px;float:left;height: 600px;margin:5px}
+.task-grid h1 {text-align: center;margin-bottom:5px; color:#fff; font-size: 20px;border-top-left-radius: 3px 3px; border-top-right-radius: 3px 3px;background-color:#476573;}
+.task-grid li {border: 1px solid black; display:block;  padding:5px; background-color: #F8F8F8;margin-bottom: 9px;margin: 5px}
+.tasks-first {background-color: #e9f3f3}
+.tasks-in-progress {background-color: #daebeb}
+.tasks-last {background-color: #d1e5e6}
 
 .task-name, .task-person, .task-difficulty {font-size: 12px;display:block;text-transform:capitalize;font-size: 14px}
 .task-person {clear:both}
-.task-created {padding-top: 3px;float:right;font-size: 11px; font-family: 'Verdana';}
+.task-updated {padding-top: 3px;float:right;font-size: 11px; font-family: 'Verdana';}
 .task-name {float:left}
 .task-start{float:right}
+.task-edit{font-size: 12px}
+.task-show{font-size: 12px}
+.task-date-divider {font-size: 10px; border-bottom: 1px solid black; border-top: 1px solid black;background-color:#b3b3b3;text-align: center}
 
-/* new task ajax */
-#new_task {border: 1px solid black; width: 300px; height: 200px}
+/* new task ajax 
+#new_task {border: 1px solid black; width: 275px; height: 230px; background-color: #e9f3f3}
 #new_task ol {padding: 10px 10px 0 10px;list-style-type:none}
-#new_task ol li {position: relative; padding-bottom: 27px;}
-#new_task label {position: relative; clear:left; float: left;width: 100px ; margin-right: 15px; text-align:right}
-#new_task input {width: 150px;float: right; padding-right: 10px;}
-#new_task legend { text-transform: uppercase; font-size: 10px; padding: 2px 4px 2px 4px; margin-left: 5px; color: #ffffff; background: #493F0B;
-}
+#new_task ol li {position: relative;}
+#new_task label {font-size: 12px; text-transform: uppercase; position: relative; clear:left; float: left;width: 100px ; margin-right: 15px; text-align:right}
+#new_task input {width: 150px; padding-right: 10px;} */
+#new_task {border: 1px solid black; width: 275px; height: 330px; background-color: #e9f3f3}
+#new_task ol {padding: 10px 10px 0 10px;list-style-type:none}
+#new_task ol li {position: relative;}
+#new_task label {display:block;font-size: 12px; text-transform: uppercase; position: relative;width: 100px ; margin-right: 15px; text-align:left}
+#new_task input {width: 150px; padding-right: 10px;}
+#new_task legend { text-transform: uppercase; font-size: 10px; padding: 2px 4px 2px 4px; margin-left: 5px; color: #ffffff; background: #493F0B;}
+#new_task .submit-task {margin-top:10px;}
+#task_description {width: 255px}
 
+/* show task */
+#show-task {padding: 5px;background-color: #f9f9f9;border: 1px solid black; width: 80%;}
+.comments-list {list-style-type:none}
+.comments-list .comment-created {font-size:12px}

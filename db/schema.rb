@@ -13,9 +13,10 @@
 ActiveRecord::Schema.define(:version => 20110122064521) do
 
   create_table "comments", :force => true do |t|
-    t.integer   "commentable_id",                                          :null => false
+    t.integer   "commentable_id",   :null => false
     t.string    "commentable_type"
-    t.string    "status",           :limit => 0, :default => "In Process"
+    t.integer   "user_id"
+    t.string    "comment"
     t.timestamp "updated_at"
     t.timestamp "created_at"
   end
@@ -38,9 +39,9 @@ ActiveRecord::Schema.define(:version => 20110122064521) do
   end
 
   create_table "projects", :force => true do |t|
-    t.string    "name",          :limit => 80, :default => "",                      :null => false
-    t.string    "description",                 :default => "",                      :null => false
-    t.string    "status",        :limit => 0,  :default => "Requirement Gathering"
+    t.string    "name",          :limit => 80, :default => "", :null => false
+    t.string    "description",                 :default => "", :null => false
+    t.string    "status"
     t.integer   "created_by_id", :limit => 2
     t.integer   "owner_id",      :limit => 2
     t.timestamp "updated_at"
@@ -48,12 +49,13 @@ ActiveRecord::Schema.define(:version => 20110122064521) do
   end
 
   create_table "tasks", :force => true do |t|
-    t.string    "title"
-    t.integer   "difficulty",                                    :null => false
-    t.integer   "created_by",                                    :null => false
-    t.integer   "assigned_to",                                   :null => false
-    t.integer   "project_id",                                    :null => false
-    t.string    "status",      :limit => 0, :default => "To Do"
+    t.string    "name"
+    t.string    "description"
+    t.integer   "difficulty"
+    t.integer   "created_by"
+    t.integer   "assigned_to"
+    t.integer   "project_id"
+    t.string    "status",      :limit => 0, :default => "to_do"
     t.timestamp "updated_at"
     t.timestamp "created_at"
   end

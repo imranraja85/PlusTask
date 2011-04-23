@@ -1,6 +1,6 @@
 <%= javascript_include_tag "app/selectall.js" %>
 <%= javascript_include_tag "app/lightbox2.js" %>
-<%= javascript_include_tag "plugin/ba-bbq.jquery.js" %>
+<%= javascript_include_tag "plugins/ba-bbq.jquery.js" %>
 <%= javascript_include_tag "plugins/jquery.simplemodal.1.4.min.js" %>
 <%= stylesheet_link_tag "rest/users.css"%>
 <script type="text/javascript" charset="utf-8">
@@ -9,7 +9,7 @@
 </script>
 
 <h1 class="lime-green-header">Users</h1>
-<%= link_to_lightbox image_tag("/images/add_person.png"), new_user_path, :class => "floatR" %>
+<%= link_to_lightbox image_tag("/images/add_person.png"), new_user_path, :class => "lightbox floatR" %>
 <%= form_tag users_path, :method => :get do %>
   <%= label_tag "user_department", "Department" %>
   <%= select "user", "department", User::DEPARTMENTS, {:prompt => "Select Department"} %>

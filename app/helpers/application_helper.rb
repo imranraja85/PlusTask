@@ -20,4 +20,8 @@ module ApplicationHelper
     link_to(name, path, options)
   end
   
+  def button_to_lightbox(name, path, html_options = {})
+    options = (html_options).merge!({:class=>"lightbox #{html_options.fetch(:class) if html_options.has_key?(:class)}"})
+    button_to(name, path, options)
+  end
 end

@@ -2,11 +2,25 @@
 /* Styles for projects */
 /***********************/ 
 
+/* New Project */
+#new-project {border: 1px solid black;padding: 5px; width: 350px; height: auto; background-color: #e9f3f3}
+#new-project ol {padding: 10px 10px 0 10px;list-style-type:none}
+#new-project ol li {position: relative;}
+#new-project label {display:block;font-size: 12px; text-transform: uppercase; position: relative;width: 100px ; margin-right: 15px; text-align:left}
+#new-project input {width: 150px; padding-right: 10px;}
+#new-project input[type='submit'] {margin-top:15px;float:right}
+
 /* Projects Index  */
 .project-details{padding: 10px;background-color: #ffffff;}
 .project-info {background-color: #f3f6ed;}
 .employees{padding: 5px;margin-right: 300px;width: 200px;float:right;}
 .submenu-links a {font-size: 13px; color: black}
+.project-status {color: #444444;padding-left: 10px;font-size: 14px}
+.overview-project-description {width: 700px;float:left}
+#overview-actions {float:right;padding-right:25px}
+#overview-actions li {list-style-type: none}
+#overview-actions ul li {font-size: 18px; padding: 5px 0px 5px 5px}
+.overview-subcontext {border: 1px dashed #363636; width: 255px;padding:10px;float:left}
 
 /* projects left hand nav */
 #projects-list {width:220px;float:left;height: 600px;overflow:hidden}
@@ -22,9 +36,10 @@
 .quick-links {margin-top: 1px;}
 .quick-links a {text-decoration:none; font-size: 13px; font-weight: normal;}
 .quick-links ul { display: inline; margin: 0px; padding: 0px; float: left;}
-.quick-links li { background-color:#c7dbe6;width: 150px; display:inline; padding: 3px 5px; margin: 0px; text-align: center; -moz-border-radius-topright:3px;-webkit-border-top-right-radius:3px;-moz-border-radius-topleft:3px;-webkit-border-top-left-radius:3px;}
+.quick-links li { background-color:#c7dbe6;width: 150px; display:inline; padding: 5px 8px 4px; margin: 0px; text-align: center; -moz-border-radius-topright:3px;-webkit-border-top-right-radius:3px;-moz-border-radius-topleft:3px;-webkit-border-top-left-radius:3px;}
 .quick-links li.active { background: #ddd; border: 1px solid #aaa; border-bottom: 0px;}
-.quick-links a.active {background-color:red; color: #333;}
+.quick-links a.active {outline:0;background-color:red; color: #333;}
+.quick-links a:focus {outline:0;}
 
 
 

@@ -14,6 +14,7 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.find(params[:id])
+    @tasks = @project.tasks.order("id desc")
     respond_to do |format|
       format.html
       format.js {render :layout => false}
@@ -62,7 +63,12 @@ class ProjectsController < ApplicationController
   
   def tasks
     @project = Project.find(params[:id])
-    @tasks = @project.tasks.order("created_at desc").group_by(&:status) 
+    @assigned_to_user = params[:assigned_to]
+    if params[:assigned_to]
+      @tasks = @project.tasks.where(:assigned_to => params[:assigned_to]).order("updated_at desc").group_by(&:status) 
+    else
+      @tasks = @project.tasks.order("updated_at desc").group_by(&:status) 
+    end
 
     respond_to do |format|
       format.html {render :action => 'show'}

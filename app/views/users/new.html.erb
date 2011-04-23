@@ -1,5 +1,5 @@
 Add New User
-<% form_for @user, new_user_path do |f| %>
+<%= form_for @user, new_user_path do |f| %>
   <%= render :partial => 'user', :locals => {:f => f } %>
   <%= f.submit %>
 <% end %>

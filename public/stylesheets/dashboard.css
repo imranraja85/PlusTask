@@ -1,0 +1,33 @@
+/* Dashboard index */
+/* commented htis out in view */
+.dashboard-recent-items {display: inline; float:left; border-right: 1px dashed black; width: 200px;padding:15px; height: 300px}
+.dashboard-recent-items h1 {font-size: 17px}
+.dashboard-recent-items ul {list-style-type: none}
+.dashboard-recent-items li {font-size: 13px}
+
+
+/* for an project being displayed on the dashboard */
+#dashboard-projects {width: 650px;float:left}
+/*
+.dashboard-project {margin: 5px;width: 640px; padding:5px; background-color: white; height: 100px}
+#dashboard-projects .project-even {background-color: #ECF1EF}
+#dashboard-projects .project-odd {background-color: #FFFFFE}
+*/
+.dashboard-project {-moz-border-radius: 7px;-webkit-border-radius: 7px;width:640px; padding: 5px; background-color: #F8F8F8; height: 115px; margin-bottom: 5px; border: 1px solid #eaeaea}
+.dashboard-project-name a {font-family: 'Georgia, serif'; font-size: 17px;margin:15px 10px 5px 0px}
+.dashboard-project-quick-action-links  {display:none;float:right; margin: 4px;font-size: 13px}
+.dashboard-project-quick-action-links  ul {list-style-type: none}
+.dashboard-project-quick-action-links  ul li {list-style-type: none}
+.dashboard-project-quicklinks {font-size: 11px;font-family: Verdana}
+.dashboard-project-nav-links a{color:red;font-size: 11px;font-family: Verdana}
+.dashboard-project-description {height: 60px;width: 500px;font-size: 13px;}
+.dashboard-project-footer {height: 10px;font-family:verdana;font-size:11px;text-align:right;color: #aeaeae}
+
+.dashboard-project-recent-tasks {float:left}
+
+#dashboard-actions {margin-left:30px;float:left}
+#dashboard-actions ul {list-style-type: none;}
+#dashboard-actions ul li {font-size: 18px; padding: 5px 0px 5px 5px}
+
+
+

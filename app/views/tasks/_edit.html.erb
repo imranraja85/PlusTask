@@ -1,0 +1,44 @@
+<%= javascript_include_tag 'app/tasks.js' %>
+<div id="new_task">
+  <%= form_for @task, :remote => true do |f| %>
+    <fieldset>
+    <legend>Edit Task</legend>
+    <ol>
+      <li>
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+      </li>
+
+      <li>
+        <%= f.label :description %>
+        <%= f.text_area :description, :rows => 5, :columns => 5 %>
+      </li>
+
+      <li>
+        <%= f.label :difficulty%>
+        <%= f.text_field :difficulty%>
+      </li>
+
+      <li>
+        <%= f.label :assigned_to%>
+        <%= f.select :assigned_to, options_from_collection_for_select(@project.users, "id", "name")%>
+      </li>
+
+      <li>
+        <%= f.label :status %>
+        <%= f.select :status, Task::STATUSES %>
+      </li>
+
+      <li>
+        <%= hidden_field_tag :project_id, @project.id %>
+      </li>
+
+      <li>
+        <span class="remove-task-edit" style="padding-right:20px;font-size: 13px; color: #035d92;cursor:pointer">Cancel</span>
+        <%= f.submit "Update this task", :class => 'submit-task' %>
+      </li>
+    </ol>
+  </legend>
+  </fieldset>
+  <% end %>
+</div>

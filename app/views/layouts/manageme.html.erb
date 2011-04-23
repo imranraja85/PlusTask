@@ -12,15 +12,20 @@
   </head>
   <body>
     <div id="top-header">
-      <span class="floatL"><%= image_tag("templogo.png", :class => 'floatL')%> ManageMe Dashboard</span>
-      <span class="floatR"> Logged in as <%= current_user.name %>&nbsp; | &nbsp;<%= link_to "Logout", destroy_user_session_path %></span>
+      <div class="floatL"><%= link_to "Go to Dashboard", dashboard_path %></div>
+
+      <div class="floatL" id="company-header">
+        <%= current_user.company %> 
+      <span class="lime-green-header"><%= @project.try(:name) %></span>
+      </div>
+
+      <div class="floatR"> 
+        <%= current_user.name %>&nbsp; | <%= link_to "Settings", "" %> | &nbsp;<%= link_to "Logout", destroy_user_session_path %>
+      </div>
     </div>
     <div id="body">
-      <div id="company-header">
-        <%= current_user.company %>
-      </div>
       <div id="nav-container">
-        <%= render :partial => 'layouts/header/navigation' %>
+        <%#= render :partial => 'layouts/header/navigation' %>
       </div>
       <div id="content">
         <% flash.each do |name, msg| -%>
@@ -28,6 +33,7 @@
         <% end -%>
 
         <%= yield %>
+        <div class="clear"></div>
       </div>
     </div>
   </body>
