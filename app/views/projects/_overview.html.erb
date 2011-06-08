@@ -1,6 +1,11 @@
-<span class="lime-green-header"><%= @project.name %></span><span class="project-status"><%= @project.status %></span>
+<span class="lime-green-header"><%= @project.name %></span>
+
+<table id="overview-details">
+  <tr><td class="label-header">Project Owner</td><td> <%= @project.owner.name %></td></tr>
+  <tr><td class="label-header">Status</td><td><%= @project.status %></td></tr>
+  <tr><td class="label-header">Created</td><td><%= fmt_us(@project.created_at) %></td></tr>
+</table>
 <div class="clear"></div>
-<div class="overview-project-description"><%= @project.description %></div>
 
 <div id="overview-actions">
   <ul>

@@ -14,6 +14,7 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.find(params[:id])
+    @page_title = @project.name
     @tasks = @project.tasks.order("id desc")
     respond_to do |format|
       format.html
@@ -73,6 +74,14 @@ class ProjectsController < ApplicationController
     respond_to do |format|
       format.html {render :action => 'show'}
       format.js 
+    end
+  end
+
+  def milestones
+    @project = Project.find(params[:id])
+    @milestones = @project.milestones
+    respond_to do |format|
+      format.html {render :action => 'milestones'}
     end
   end
 end

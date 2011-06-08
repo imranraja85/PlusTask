@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110122064521) do
+ActiveRecord::Schema.define(:version => 20110425234659) do
 
   create_table "comments", :force => true do |t|
     t.integer   "commentable_id",   :null => false
@@ -27,6 +27,15 @@ ActiveRecord::Schema.define(:version => 20110122064521) do
     t.integer   "start_time"
     t.integer   "end_time"
     t.string    "status",     :limit => 0, :default => "In Process"
+    t.timestamp "updated_at"
+    t.timestamp "created_at"
+  end
+
+  create_table "milestones", :force => true do |t|
+    t.integer   "created_by"
+    t.integer   "assigned_to"
+    t.integer   "project_id"
+    t.timestamp "due_date"
     t.timestamp "updated_at"
     t.timestamp "created_at"
   end
@@ -55,7 +64,8 @@ ActiveRecord::Schema.define(:version => 20110122064521) do
     t.integer   "created_by"
     t.integer   "assigned_to"
     t.integer   "project_id"
-    t.string    "status",      :limit => 0, :default => "to_do"
+    t.integer   "milestone_id"
+    t.string    "status",       :limit => 0, :default => "to_do"
     t.timestamp "updated_at"
     t.timestamp "created_at"
   end

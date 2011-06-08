@@ -2,79 +2,45 @@
 <%= javascript_include_tag "plugins/ba-bbq.jquery.js" %>
 <%= javascript_include_tag "plugins/jquery.simplemodal.1.4.min.js" %>
 <%= stylesheet_link_tag 'dashboard', 'main' %>
-<!--
-<div class="dashboard-recent-items">
-  <h1>Recent Projects</h1>
-  <ul>
-    <%# @projects.each do |project| %>
-      <li style="border-bottom: 1px dashed #E0E0E0; padding: 5px">
-        <%#= link_to project.name, project_path(project) %>
-        <%#= link_to_lightbox "+T", new_project_task_path(project) %>
-        <%#= link_to "+P" %>
-        <%#= link_to "+F" %>
-      </li>
-    <%# end %>
-  </ul>
-</div>
-
-<div class="dashboard-recent-items">
-  <h1>Recent Tasks</h1>
-  <ul>
-    <%# @tasks.each do |task| %>
-      <li style="border-bottom: 1px dashed #E0E0E0; padding: 5px">
-      <%#= link_to "#{task.name}", tasks_project_path(task.project) %>
-      <span class="weak" style="font-size:10px">(<%#= task.status.humanize %>)</span>
-      </li>
-    <%# end %>
-  </ul>
-</div>
-
-<div class="dashboard-recent-items">
-  <h1>Recent Comments</h1>
-  <ul>
-    <%# @comments.each do |comment| %>
-      <li style="border-bottom: 1px dashed #E0E0E0; padding: 5px">
-        <%#= link_to "#{comment.comment}" %>
-        <span class="weak" style="font-size:10px">(<%#= comment.commentable_type %>)</span>
-      </li>
-    <%# end %>
-  </ul>
-</div>
--->
 <div id="dashboard-projects">
   <% @projects.each do |project| %>
     <div class="dashboard-project <%= cycle("project-even", "project-odd") %>">
+      <!---
       <div class="dashboard-project-quick-action-links">
         <ul>
-          <li><%= link_to_lightbox "Add a task", new_project_task_path(project) %></li>
-          <li><%= link_to_lightbox "Add a person", new_project_task_path(project)%></li>
-          <li><%= link_to_lightbox "Upload a file", new_project_task_path(project)%></li>
+          <li><%#= link_to_lightbox "Add a task", new_project_task_path(project) %></li>
+          <li><%#= link_to_lightbox "Add a person", new_project_task_path(project)%></li>
+          <li><%#= link_to_lightbox "Upload a file", new_project_task_path(project)%></li>
         </ul>
       </div>
-      <div>
+      -->
+      <div style="float:left">
         <span class="dashboard-project-name"><%= link_to project.name, project_path(project) %></span>
         <div class="dashboard-project-quicklinks">
           <span class="dashboard-project-nav-links">
-            <%= link_to "Overview" %> | 
-            <%= link_to "Tasks" %> | 
-            <%= link_to "People on this project" %> |
+            <%= link_to "Overview", project_path(project) %> | 
+            <%= link_to "Tasks", tasks_project_path(project) %> | 
+            <%= link_to "People on this project", people_project_path(project) %> |
             <%= link_to "Files" %>
-          </spanoor>
+          </span>
         </div>
-      </div>
       <div class="dashboard-project-description"> <%= project.description %> </div>
-      <div class="dashboard-project-footer">
-        <%= project.number_of_completed_tasks %> of <%= project.tasks.count %> tasks completed
-        <%= percentage_of_tasks_completed_for_a_project(project) %>
       </div>
-      <div class="clear"></div>
+      <div class="dashboard-project-stats">
+        <ul class="no-list-type">
+          <li><span class="percent-complete"><%= percentage_of_tasks_completed_for_a_project(project) %></li>
+          <li class="small-text"><span class="tasks-complete-text weak-grey">TASKS COMPLETE</span></li>
+          <li><span class="tasks-complete"><%= tasks_status_for_milestone(project) %></span></li>
+          <li class="small-text"><span class="weak-grey">NEXT MILESTONE</span></li>
+          <li><span class="popping-green"><%= project.current_milestone.try(:due_date) ?  fmt_us(project.current_milestone.try(:due_date)) : 'No Milestone'%></span></li>
+        </ul>
+      </div>
     </div>
   <% end %>
 </div>
 
 <div id="dashboard-actions">
   <ul>
-    <li><%= button_to "Add a Milestone", new_user_path, :class => "action-button", :method => :get %></li>
     <li><%= button_to "Add a Project", new_project_path, :class => "action-button", :method => :get %></li>
     <li><%= button_to "Add a Person", new_user_path, :class => "action-button", :method => :get %></li>
   </ul>

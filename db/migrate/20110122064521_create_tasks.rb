@@ -8,6 +8,7 @@ class CreateTasks < ActiveRecord::Migration
                 `created_by` INT(11) UNSIGNED COMMENT 'Person who created the task',           
                 `assigned_to` INT(11) UNSIGNED COMMENT 'Person who the task is assigned to',           
                 `project_id` INT(11) UNSIGNED COMMENT 'Project the task is associated with',           
+                `milestone_id` INT(11) UNSIGNED COMMENT 'Milestone the task belongs to',           
                 `status` enum ('to_do','in_progress','completed') DEFAULT 'to_do' COMMENT 'Status of meeting',
                 `updated_at` TIMESTAMP NULL COMMENT 'Datetime of latest update',
                 `created_at` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Datetime of creation.',

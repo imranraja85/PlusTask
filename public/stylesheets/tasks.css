@@ -22,7 +22,7 @@
 #new_task ol li {position: relative;}
 #new_task label {font-size: 12px; text-transform: uppercase; position: relative; clear:left; float: left;width: 100px ; margin-right: 15px; text-align:right}
 #new_task input {width: 150px; padding-right: 10px;} */
-#new_task {border: 1px solid black; width: 275px; height: 330px; background-color: #e9f3f3}
+#new_task {border: 1px solid black; width: 275px; height: 360px; background-color: #e9f3f3}
 #new_task ol {padding: 10px 10px 0 10px;list-style-type:none}
 #new_task ol li {position: relative;}
 #new_task label {display:block;font-size: 12px; text-transform: uppercase; position: relative;width: 100px ; margin-right: 15px; text-align:left}

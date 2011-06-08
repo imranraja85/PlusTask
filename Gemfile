@@ -1,15 +1,15 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.0.rc'
+gem 'rails', '3.0.7'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem "mysql"
+gem "mysql2", '~> 0.2.6'
 gem "jquery-rails"
 gem "vpim"
 gem "devise"
-gem "paperclip", "~> 2.3"
+#gem "paperclip", "~> 2.3"
 
 # Use unicorn as the web server
 # gem 'unicorn'
@@ -30,5 +30,5 @@ gem "paperclip", "~> 2.3"
 # and rake tasks are available in development mode:
 group :development, :test do  
   gem 'webrat'                 
-  gem 'ruby-debug'
+  gem 'ruby-debug19'
 end

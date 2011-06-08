@@ -18,6 +18,7 @@ Manageme::Application.routes.draw do
     member do
       get :people
       get :tasks
+      get :milestones
     end
     resource :task
   end

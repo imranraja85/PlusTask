@@ -1,9 +1,15 @@
 module DashboardHelper
   def percentage_of_tasks_completed_for_a_project(project)
-    if project.number_of_tasks > 0
-      number_to_percentage((project.number_of_completed_tasks.to_f/project.number_of_tasks.to_f) * 100, :precision => 2)
-    else
-      "No Tasks"
+    if project.current_milestone && project.current_milestone.tasks.count > 0
+      "<span class='popping-orange'>#{number_to_percentage((project.current_milestone.completed_tasks.count.to_f/project.current_milestone.tasks.count.to_f) * 100, :precision => 0)}</span>".html_safe
+    elsif project.current_milestone
+      "No tasks for this milestone"
     end
+  end
+
+  def tasks_status_for_milestone(project)
+    if project.current_milestone && project.current_milestone.tasks.count > 0
+      "<span class='popping-green'>#{project.current_milestone.completed_tasks.count}</span><span class='weak-grey'> OF </span> <span class='popping-green'> #{project.current_milestone.tasks.count}</span>".html_safe
+    end  
   end
 end

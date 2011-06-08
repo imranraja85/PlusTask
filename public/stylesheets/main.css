@@ -18,7 +18,7 @@ body{min-width:960px}.container_12,.container_16{margin-left:auto;margin-right:a
 .menu-item-people a:hover {background-position: -150px -50px;width: 75px;}
 .menu-item-setup a:hover {background-position: -225px -50px;width: 65px;}
 
-#company-header {padding-top: 15px;padding-left: 30px;padding-top:25px;height: 55px;width: 650px;font-size: 40px;}
+#company-header {padding-top: 15px;padding-left: 45px;padding-top:25px;height: 55px;width: 650px;font-size: 40px;}
 
 #body {width: 960px; margin-left: auto; margin-right:auto}
 
@@ -69,6 +69,12 @@ table {border-collapse: collapse;width: 100%;}
 .lime-green-header{color:#aecd39;font-family:"Myriad Pro";font-size:22px; font-weight: bold}
 .lime-green-submenu{color:#aecd39;color: black;font-family:"Myriad Pro";font-size:18px; font-weight: bold}
 .grey-header {color: #444; font-size: 22px;}
+.cool-blue-header{color:#1F99BA;font-family:"Myriad Pro";font-size:22px; font-weight: bold}
+.cool-orange-header{color:#FF9933;font-family:"Myriad Pro";font-size:22px; font-weight: bold}
+
+.popping-green {font-size: 18px; font-weight:bold; font-family:"Times";color:#9db401}
+.popping-orange {font-size: 36px; font-weight:bold; font-family:"Times";color:#eeac1e}
+.weak-grey {font-size: 12px; text-transform: uppercase; font-family:"Times";color:#898a88}
 
 /* default labels */
 label {}

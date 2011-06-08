@@ -1,6 +1,7 @@
 class Task < ActiveRecord::Base
   belongs_to :user, :foreign_key => :assigned_to
   belongs_to :project
+  belongs_to :milestone
   has_many :comments, :as => :commentable
 
   STATUSES = ["to_do", "in_progress", "completed"]

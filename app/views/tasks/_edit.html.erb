@@ -25,6 +25,10 @@
       </li>
 
       <li>
+        <%= f.label :milestone_id %>
+        <%= f.select :milestone_id , options_from_collection_for_select(@project.milestones, "id", "due_date", @task.milestone_id)%>
+      </li>
+      <li>
         <%= f.label :status %>
         <%= f.select :status, Task::STATUSES %>
       </li>
