@@ -1,0 +1,28 @@
+<h1 class="lime-green-header">Milestones</h1>
+<span class="weak-grey">Keep track of project progess</span><br/>
+<hr/>
+
+<% @milestones.each do |milestone| %>
+  <span class="popping-orange" style="font-size:20px">Due: <%= milestone.due_date %></span>
+  <span class="weak-grey">Tasks for this milestone</span><br/>
+  <table class="compact-table">
+    <thead>
+      <tr>
+        <th>Task Name</th>
+        <th>Description</th>
+        <th>Status</th>
+        <th>Assigned To</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% milestone.tasks.each do |task| %>
+        <tr>
+          <td><%=task.try(:name) %></td>
+          <td><%=truncate(task.try(:description)) %></td>
+          <td><%=task.try(:status) %></td>
+          <td><%=task.try(:assigned_to_user) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>

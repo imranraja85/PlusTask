@@ -19,8 +19,9 @@
         <div class="dashboard-project-quicklinks">
           <span class="dashboard-project-nav-links">
             <%= link_to "Overview", project_path(project) %> | 
-            <%= link_to "Tasks", tasks_project_path(project) %> | 
             <%= link_to "People on this project", people_project_path(project) %> |
+            <%= link_to "Tasks", tasks_project_path(project) %> | 
+            <%= link_to "Milestones", milestones_project_path(project) %> | 
             <%= link_to "Files" %>
           </span>
         </div>
@@ -32,7 +33,7 @@
           <li class="small-text"><span class="tasks-complete-text weak-grey">TASKS COMPLETE</span></li>
           <li><span class="tasks-complete"><%= tasks_status_for_milestone(project) %></span></li>
           <li class="small-text"><span class="weak-grey">NEXT MILESTONE</span></li>
-          <li><span class="popping-green"><%= project.current_milestone.try(:due_date) ?  fmt_us(project.current_milestone.try(:due_date)) : 'No Milestone'%></span></li>
+          <li><span class="popping-green"><%= project.current_milestone.try(:due_date) ? fmt_us(project.current_milestone.try(:due_date)) : 'No Milestone'%></span></li>
         </ul>
       </div>
     </div>

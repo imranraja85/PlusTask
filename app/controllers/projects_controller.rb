@@ -81,7 +81,9 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
     @milestones = @project.milestones
     respond_to do |format|
-      format.html {render :action => 'milestones'}
+      #format.html {render :action => 'milestones'}
+      format.html {render :action => 'show'}
+      format.js {render :layout => false}
     end
   end
 end

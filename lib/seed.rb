@@ -6,7 +6,7 @@ module Seed
       ActiveRecord::Base.connection.execute("SET foreign_key_checks=0;")
       table_name = File.basename(file, ".csv")
       ActiveRecord::Base.connection.execute("
-        LOAD DATA LOCAL INFILE
+        LOAD DATA INFILE
         '#{file}'
         INTO TABLE #{table_name}
         FIELDS TERMINATED BY ','

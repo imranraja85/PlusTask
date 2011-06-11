@@ -16,4 +16,8 @@ class Task < ActiveRecord::Base
   def to_completed
     update_attribute(:status, "completed")  
   end
+
+  def assigned_to_user
+    user.try(:name)
+  end
 end

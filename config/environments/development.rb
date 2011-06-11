@@ -30,4 +30,5 @@ Manageme::Application.configure do
 
   # Print deprecation notices to the Rails logger
   config.active_support.deprecation = :log
+  Mysql2::Client.default_query_options[:connect_flags] |= Mysql2::Client::LOCAL_FILES
 end
