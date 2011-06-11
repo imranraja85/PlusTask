@@ -1,0 +1,21 @@
+<%= stylesheet_link_tag 'rest/milestones' %>
+<% form_for @milestone do |f| %>
+<fieldset>
+  <legend>New Milestone</legend>
+  <ol>
+    <li>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </li>
+    <li>
+      <%= f.label :due_date %>
+      <%= f.date_select :due_date %>
+    </li>
+    <li>
+      <%= hidden_field_tag :project_id, @project.id %>
+    </li>
+    <li>
+      <%= f.submit "Create this milestone", :class => 'submit-task' %>
+    </li>
+  </ol>
+<% end %>

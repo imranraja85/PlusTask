@@ -1,28 +1,27 @@
 <h1 class="lime-green-header">Milestones</h1>
-<span class="weak-grey">Keep track of project progess</span><br/>
-<hr/>
+<span>Select a milestone: <%= options_from_collection_for_select(@project.milestones, "id", "name") %></span>
+<span class="floatR"><%= link_to_lightbox "Add a Milestone", new_project_milestone_path(@project), :class => "action-link" %></span>
+<div class="clear"></div>
 
-<% @milestones.each do |milestone| %>
-  <span class="popping-orange" style="font-size:20px">Due: <%= milestone.due_date %></span>
-  <span class="weak-grey">Tasks for this milestone</span><br/>
-  <table class="compact-table">
-    <thead>
+<span class="popping-orange" style="font-size:20px"><%= @milestone.name %> - <%= fmt_month_day_year(@milestone.due_date) %></span>
+<span class="weak-grey">Tasks for this milestone</span><br/>
+<table class="compact-table">
+  <thead>
+    <tr>
+      <th>Task Name</th>
+      <th>Description</th>
+      <th>Status</th>
+      <th>Assigned To</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @milestone.tasks.each do |task| %>
       <tr>
-        <th>Task Name</th>
-        <th>Description</th>
-        <th>Status</th>
-        <th>Assigned To</th>
+        <td><%=task.try(:name) %></td>
+        <td><%=truncate(task.try(:description)) %></td>
+        <td><%=task.try(:status).humanize %></td>
+        <td><%=task.try(:assigned_to_user) %></td>
       </tr>
-    </thead>
-    <tbody>
-      <% milestone.tasks.each do |task| %>
-        <tr>
-          <td><%=task.try(:name) %></td>
-          <td><%=truncate(task.try(:description)) %></td>
-          <td><%=task.try(:status) %></td>
-          <td><%=task.try(:assigned_to_user) %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-<% end %>
+    <% end %>
+  </tbody>
+</table>

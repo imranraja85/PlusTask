@@ -1,3 +1,4 @@
+#company-header {color:white}
 /* Dashboard index */
 /* commented htis out in view */
 .dashboard-recent-items {display: inline; float:left; border-right: 1px dashed black; width: 200px;padding:15px; height: 300px}

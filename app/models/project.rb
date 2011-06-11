@@ -21,6 +21,4 @@ class Project < ActiveRecord::Base
   def current_milestone
     milestones.where("due_date >= ?",  Date.today).limit(1).first
   end
-
-
 end
