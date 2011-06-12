@@ -1,3 +1,9 @@
 1,Facebook Integration, This Facebook Integration feature is going to be used to automatically post status updates when one of our customers releases a new product. We will also include a link back to our site in this status update, 2,1,1,1,1,to_do,2010-12-31 10:20:20,2010-12-31 10:20:20
 2,Build Monthly Reports, Monthly reports for clients to display monthly P&L and reconciliation,6,1,1,1,1,to_do,2010-01-28 10:20:20,2010-01-28 10:20:20
 3,Rake task for renewing subscriptions, Write rake tasks to automatically renew customer subscriptions every evening.,10,1,2,1,,in_progress,2010-09-21 10:20:20,2010-09-21 10:20:20
+4,Rake task for renewing subscriptions, Write rake tasks to automatically renew customer subscriptions every evening.,10,1,2,1,,in_progress,2010-09-21 10:20:20,2010-09-21 10:20:20
+5,Rake task for sending out reminder emails, Write rake tasks to automatically email monthly invoices to our customers.,10,1,2,1,,to_do,2010-09-21 10:20:20,2010-09-21 10:20:20
+6,Design landing page, Research effective landing pages and build it!,10,1,2,1,,in_progress,2010-09-21 10:20:20,2010-09-21 10:20:20
+7,Design take a tour page, Take screenshots and create graphics for the tour page,10,1,2,1,,to_do,2010-09-21 10:20:20,2010-09-21 10:20:20
+8,Make a Starting Guide FAQ, In order to make our product appeal to our target audience we want to make sure we convey how easy it is to use PlusTask. We can do that by creating an easy to understand guide,10,1,2,1,,completed,2010-09-21 10:20:20,2010-09-21 10:20:20
+9,Build payment system, Create payment system using Paypal and possibly braintree. We want to keep everything at one month subscriptions.,10,1,2,1,,in_process,2010-09-21 10:20:20,2010-09-21 10:20:20

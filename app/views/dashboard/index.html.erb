@@ -29,11 +29,12 @@
       </div>
       <div class="dashboard-project-stats">
         <ul class="no-list-type">
+          <li class="small-text"><span class="weak-grey uppercase">Milestone Goal</span></li>
           <li><span class="percent-complete"><%= percentage_of_tasks_completed_for_a_project(project) %></li>
-          <li class="small-text"><span class="tasks-complete-text weak-grey">TASKS COMPLETE</span></li>
-          <li><span class="tasks-complete"><%= tasks_status_for_milestone(project) %></span></li>
           <li class="small-text"><span class="weak-grey uppercase">NEXT MILESTONE</span></li>
           <li><span class="popping-green"><%= project.current_milestone.try(:due_date) ? fmt_us(project.current_milestone.try(:due_date)) : 'No Milestone'%></span></li>
+          <li class="small-text"><span class="tasks-complete-text weak-grey">TASKS COMPLETE</span></li>
+          <li><span class="tasks-complete"><%= tasks_status_for_milestone(project) %></span></li>
         </ul>
       </div>
     </div>

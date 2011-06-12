@@ -39,7 +39,7 @@ body#iframe {background-image:none;background-color:#fff;}
 /* default link styles */
 a {color: #166999;text-decoration:none;}
 
-a:visited {color: #166999;}
+a:visited {color: #3a87a2;}
 
 a:hover {color: #3a87a2;}
 
@@ -74,7 +74,7 @@ table {border-collapse: collapse;width: 100%;}
 .cool-orange-header{color:#FF9933;font-family:"Myriad Pro";font-size:22px; font-weight: bold}
 
 .popping-green {font-size: 18px; font-weight:bold; font-family:"Times";color:#9db401}
-.popping-orange {font-size: 36px; font-weight:bold; font-family:"Times";color:#eeac1e}
+.popping-orange {font-size: 34px; font-weight:bold; font-family:"Times";color:#fdb51b}
 .weak-grey {font-size: 12px; font-family:"Times";color:#898a88}
 .uppercase {text-transform: uppercase}
 

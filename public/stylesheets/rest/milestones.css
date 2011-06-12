@@ -1,3 +1,7 @@
+/* view in projects */
+.task-stat-containers {float:left;padding-left: 10px;width:100px;text-align:center}
+
+/* view on dashboard */
 ol {list-style-type:none;}
 ol {padding: 10px 10px 0 10px;list-style-type:none}
 ol li {position: relative;}

@@ -1,10 +1,30 @@
-<h1 class="lime-green-header">Milestones</h1>
-<span>Select a milestone: <%= options_from_collection_for_select(@project.milestones, "id", "name") %></span>
-<span class="floatR"><%= link_to_lightbox "Add a Milestone", new_project_milestone_path(@project), :class => "action-link" %></span>
+<%= stylesheet_link_tag 'rest/milestones.css' %>
+<span class="floatR" style="margin-top:5px"><%= link_to_lightbox "Add a new Milestone", new_project_milestone_path(@project), :class => "action-link" %></span>
+<%= form_tag milestones_project_path, {:method => :get} do |f| %>
+  <span style="text-transform:uppercase;font-size:14px">Select another milestone: <%= select_tag "milestone_id", options_from_collection_for_select(@project.milestones, "id", "name") %>
+    <%= submit_tag "Go to milestone", :class => 'submit-task' %></span>
+<% end %>
 <div class="clear"></div>
 
-<span class="popping-orange" style="font-size:20px"><%= @milestone.name %> - <%= fmt_month_day_year(@milestone.due_date) %></span>
-<span class="weak-grey">Tasks for this milestone</span><br/>
+<div style="width:100%;margin-top:10px;margin-bottom:5px;text-align:center;border-top:1px dotted #aeaeae;border-bottom:1px dotted #aeaeae">
+  <span style="font-size: 26px;padding-left:50px"><%= @milestone.try(:name).try(:upcase) %> MILESTONE TASKS</span><br/>
+  <div style="margin-left:300px">
+    <div class="task-stat-containers">
+      <span class="weak-grey uppercase">Completed</span><br/>
+      <span class="popping-green"><%= @milestone.tasks_by_status("completed").count %></span>
+    </div>
+    <div class="task-stat-containers">
+      <span class="weak-grey uppercase">In Progress</span><br/>
+      <span class="popping-green"><%= @milestone.tasks_by_status("in_progress").count %></span>
+    </div>
+    <div class="task-stat-containers">
+      <span class="weak-grey uppercase">Not Started</span><br/>
+      <span class="popping-green"><%= @milestone.tasks_by_status("to_do").count %></span>
+    </div>
+  </div>
+  <div class="clear"></div>
+</div>
+
 <table class="compact-table">
   <thead>
     <tr>
@@ -18,7 +38,7 @@
     <% @milestone.tasks.each do |task| %>
       <tr>
         <td><%=task.try(:name) %></td>
-        <td><%=truncate(task.try(:description)) %></td>
+        <td><%=truncate(task.try(:description), :length => 60) %></td>
         <td><%=task.try(:status).humanize %></td>
         <td><%=task.try(:assigned_to_user) %></td>
       </tr>
