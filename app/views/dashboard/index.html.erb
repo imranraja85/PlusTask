@@ -18,14 +18,20 @@
         <span class="dashboard-project-name"><%= link_to project.name, project_path(project) %></span>
         <div class="dashboard-project-quicklinks">
           <span class="dashboard-project-nav-links">
-            <%= link_to "Overview", project_path(project) %> | 
-            <%= link_to "People on this project", people_project_path(project) %> |
-            <%= link_to "Tasks", tasks_project_path(project) %> | 
+            <%#= link_to "Overview", project_path(project) %>
             <%= link_to "Milestones", milestones_project_path(project) %> | 
+            <%= link_to "Tasks", tasks_project_path(project) %> | 
+            <%= link_to "People on this project", people_project_path(project) %> |
             <%= link_to "Files" %>
           </span>
         </div>
       <div class="dashboard-project-description"> <%= project.description %> </div>
+      <div class="dashboard-project-quick-action">
+        <%= link_to_lightbox "Add a task", new_project_task_path(project), :remote => true %>
+        <%= link_to_lightbox "Add a milestone", new_project_milestone_path(project), :remote => true %>
+        <%= link_to "Add a person to this project" %>
+        <%= link_to "Upload a file" %>
+      </div>
       </div>
       <div class="dashboard-project-stats">
         <ul class="no-list-type">
