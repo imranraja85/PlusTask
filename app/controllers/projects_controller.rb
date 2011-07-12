@@ -1,5 +1,7 @@
 class ProjectsController < ApplicationController
   layout "manageme"
+  before_filter :load_project, :only => [:show, :update, :people, :tasks, :milestones]
+  before_filter :set_project_name, :only => [:show, :milestones, :tasks, :people]
 
   def index
     @projects = Project.all
@@ -13,8 +15,6 @@ class ProjectsController < ApplicationController
   end
 
   def show
-    @project = Project.find(params[:id])
-    @page_title = @project.name
     @tasks = @project.tasks.order("id desc")
     respond_to do |format|
       format.html
@@ -43,7 +43,6 @@ class ProjectsController < ApplicationController
   end
 
   def update
-    @project = Project.find(params[:id])
     if @project.update_attributes(params[:project])
       flash[:notice] = "Successfully updated project"
       redirect_to root_url
@@ -54,7 +53,6 @@ class ProjectsController < ApplicationController
   end
 
   def people
-    @project = Project.find(params[:id])
     @users = @project.users
     respond_to do |format|
       format.html {render :action => 'show'}
@@ -63,7 +61,6 @@ class ProjectsController < ApplicationController
   end
   
   def tasks
-    @project = Project.find(params[:id])
     @assigned_to_user = params[:assigned_to]
     if params[:assigned_to]
       @tasks = @project.tasks.where(:assigned_to => params[:assigned_to]).order("updated_at desc").group_by(&:status) 
@@ -78,10 +75,23 @@ class ProjectsController < ApplicationController
   end
 
   def milestones
-    @project = Project.find(params[:id])
-    @milestones = @project.milestones
+    if params[:milestone_id]
+      @milestone = @project.milestones.where(:id => params[:milestone_id]).first
+    else
+      @milestone = @project.current_milestone
+    end
     respond_to do |format|
-      format.html {render :action => 'milestones'}
+      format.html {render :action => 'show'}
+      format.js {render :layout => false}
     end
   end
+
+  private
+    def load_project
+      @project = Project.find(params[:id])  
+    end
+
+    def set_project_name
+      @page_title = @project.name  
+    end
 end

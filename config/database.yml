@@ -15,6 +15,7 @@ test:
   database: manageme_test
   pool: 5
   timeout: 5000
+  socket: /tmp/mysql.sock
 
 production:
   adapter: mysql2 

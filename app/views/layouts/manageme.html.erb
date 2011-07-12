@@ -3,24 +3,24 @@
   <head>
     <title>Manageme</title>
     <%= stylesheet_link_tag :all %>
-    <%= stylesheet_link_tag "css/redmond/jquery-ui-1.8.7.custom.css" %>
+    <%#= stylesheet_link_tag "css/redmond/jquery-ui-1.8.7.custom.css" %>
     <%= javascript_include_tag :all %>
+    <%= javascript_include_tag 'plugins/jquery.simplemodal.1.4.min.js' %>
+    <%= javascript_include_tag 'plugins/ba-bbq.jquery.js' %>
+    <%= javascript_include_tag 'app/lightbox2.js' %>
     <%= csrf_meta_tag %>
-    <script type="text/javascript">
-      jQuery.noConflict();
-    </script>
   </head>
   <body>
     <div id="top-header">
       <div class="floatL"><%= link_to "Go to Dashboard", dashboard_path %></div>
 
       <div class="floatL" id="company-header">
-        <%= current_user.company %> 
+        <%= link_to current_user.company, dashboard_path %> 
         <span class="lime-green-header"><%= @page_title %></span>
       </div>
 
       <div class="floatR"> 
-        <%= current_user.name %>&nbsp; | <%= link_to "Settings", "" %> | &nbsp;<%= link_to "Logout", destroy_user_session_path %>
+       Welcome, <%= current_user.name %>!&nbsp;  <%= link_to "Settings", "" %> | &nbsp;<%= link_to "Logout", destroy_user_session_path %>
       </div>
     </div>
     <div id="body">

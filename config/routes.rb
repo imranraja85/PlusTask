@@ -21,7 +21,10 @@ Manageme::Application.routes.draw do
       get :milestones
     end
     resource :task
+    resources :milestones
   end
+
+  resources :milestones
 
   resources :tasks do
     resources :comments

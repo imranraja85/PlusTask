@@ -23,6 +23,7 @@ class TasksController < ApplicationController
 
       respond_to do |format|
         format.js {flash[:notice] = "sucessesfully added task!"}
+        format.html {render :layout => false, :template => 'layouts/lightbox_close', :locals => {:lightbox_message => "Task successfully added"}}
       end
     end
   end

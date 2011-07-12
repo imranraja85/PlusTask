@@ -2,7 +2,8 @@ body{min-width:960px}.container_12,.container_16{margin-left:auto;margin-right:a
 /* main layout */
 #top-header {height: 90px;background-color: black;color: #fff;padding-top: 2px;padding-left: 10px;padding-right: 10px;}
 
-#top-header a {color: #a1c658;}
+#top-header a {color: #a1cefa;}
+#top-header  #company-header a{color:white}
 
 #nav-container ul {list-style-type: none;padding-left: 10px;}
 
@@ -38,7 +39,7 @@ body#iframe {background-image:none;background-color:#fff;}
 /* default link styles */
 a {color: #166999;text-decoration:none;}
 
-a:visited {color: #166999;}
+a:visited {color: #3a87a2;}
 
 a:hover {color: #3a87a2;}
 
@@ -59,6 +60,7 @@ table {border-collapse: collapse;width: 100%;}
 .floatR {float:right;}
 .data-label{}
 .eighteen {font-size: 18px}
+.ten {font-size: 10px}
 .big-header {font-size: 26px;letter-spacing:1px; background-color color: red} 
 .strong {font-weight: bold}
 .weak {font-weight: normal; color: #989898}
@@ -73,8 +75,9 @@ table {border-collapse: collapse;width: 100%;}
 .cool-orange-header{color:#FF9933;font-family:"Myriad Pro";font-size:22px; font-weight: bold}
 
 .popping-green {font-size: 18px; font-weight:bold; font-family:"Times";color:#9db401}
-.popping-orange {font-size: 36px; font-weight:bold; font-family:"Times";color:#eeac1e}
-.weak-grey {font-size: 12px; text-transform: uppercase; font-family:"Times";color:#898a88}
+.popping-orange {font-size: 34px; font-weight:bold; font-family:"Times";color:#fdb51b}
+.weak-grey {font-size: 12px; font-family:"Times";color:#898a88}
+.uppercase {text-transform: uppercase}
 
 /* default labels */
 label {}
@@ -113,6 +116,22 @@ label {}
   text-shadow: 0 -1px 1px #1d62ab;
 }
 
+.action-link {
+  background: #3b88d8;
+  background: -moz-linear-gradient(0% 100% 90deg, #377ad0, #52a8e8);
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#52a8e8), to(#377ad0));
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#52a8e8), to(#377ad0));
+  border-top: 1px solid #4081af;
+  border-right: 1px solid #2e69a3;
+  border-bottom: 1px solid #20559a;
+  border-left: 1px solid #2e69a3;
+  -moz-box-shadow: inset 0 1px 0 0 #72b9eb, 0 1px 2px 0 #b3b3b3;
+  -webkit-box-shadow: inset 0 1px 0 0 #72b9eb, 0 1px 2px 0 #b3b3b3;
+  text-shadow: 0 -1px 1px #3275bc;
+  color: #ffffff !important;
+  text-transform: uppercase;
+  padding: 2px 5px 2px 5px;
+}
 /* default small buttons */
 .small-action-button {
   background: #3b88d8;

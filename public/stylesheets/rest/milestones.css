@@ -1,0 +1,11 @@
+/* view in projects */
+.task-stat-containers {float:left;padding-left: 10px;width:100px;text-align:center}
+
+/* view on dashboard */
+ol {list-style-type:none;}
+ol {padding: 10px 10px 0 10px;list-style-type:none}
+ol li {position: relative;}
+label {display:block;font-size: 12px; text-transform: uppercase; position: relative;width: 100px ; margin-right: 15px; text-align:left}
+input {width: 150px; padding-right: 10px;}
+legend { text-transform: uppercase; font-size: 10px; padding: 2px 4px 2px 4px; margin-left: 5px; color: #ffffff; background: #493F0B;}
+.submit-task {margin-top:10px;}

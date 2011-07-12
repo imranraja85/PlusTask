@@ -3,7 +3,7 @@
 <p>Create and assign tasks to people and view daily progress</p>
 <%= link_to "All Tasks", "" %> | 
 <%= link_to "My Tasks", :assigned_to => current_user %>
-<span><%= button_to "Add a task", new_project_task_path(@project), :method => :get, :remote => true, :class => "floatR" %></span>
+<span><%= link_to "Add a task", new_project_task_path(@project), :remote => true, :class => "action-link floatR" %></span>
 <%#= form_tag url_for(:controller => 'projects', :action => 'tasks'), :remote => true, :method => :get do %>
   <%#= label_tag "assigned_to" %> 
   <%#= select_tag "assigned_to", options_from_collection_for_select(@project.users, "id", "name"), :id => 'assigned-to-dropdown' %>

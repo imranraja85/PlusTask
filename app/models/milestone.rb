@@ -11,6 +11,10 @@ class Milestone < ActiveRecord::Base
     tasks.where(:status => 'completed')  
   end
 
+  def tasks_by_status(status)
+    tasks.where(:status => status)  
+  end
+
   def all_tasks
     tasks  
   end
