@@ -60,6 +60,7 @@ table {border-collapse: collapse;width: 100%;}
 .floatR {float:right;}
 .data-label{}
 .eighteen {font-size: 18px}
+.ten {font-size: 10px}
 .big-header {font-size: 26px;letter-spacing:1px; background-color color: red} 
 .strong {font-weight: bold}
 .weak {font-weight: normal; color: #989898}
@@ -118,6 +119,7 @@ label {}
 .action-link {
   background: #3b88d8;
   background: -moz-linear-gradient(0% 100% 90deg, #377ad0, #52a8e8);
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#52a8e8), to(#377ad0));
   background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#52a8e8), to(#377ad0));
   border-top: 1px solid #4081af;
   border-right: 1px solid #2e69a3;

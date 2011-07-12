@@ -7,6 +7,7 @@ class CreateProjects < ActiveRecord::Migration
                 `status` varchar(255) DEFAULT NULL COMMENT 'Status of project',
                 `created_by_id` SMALLINT(5) UNSIGNED COMMENT 'ID of user that created this project',           
                 `owner_id` SMALLINT(5) UNSIGNED COMMENT 'ID of the project owner',
+                `live_date` DATETIME NULL COMMENT 'Date project will be complete',
                 `updated_at` TIMESTAMP NULL COMMENT 'Datetime of latest update',
                 `created_at` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Datetime of creation.',
                 PRIMARY KEY  (`id`)

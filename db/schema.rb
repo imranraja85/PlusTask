@@ -54,6 +54,7 @@ ActiveRecord::Schema.define(:version => 20110425234659) do
     t.string    "status"
     t.integer   "created_by_id", :limit => 2
     t.integer   "owner_id",      :limit => 2
+    t.datetime  "live_date"
     t.timestamp "updated_at"
     t.timestamp "created_at"
   end

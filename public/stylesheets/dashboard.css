@@ -14,26 +14,25 @@
 #dashboard-projects .project-even {background-color: #ECF1EF}
 #dashboard-projects .project-odd {background-color: #FFFFFE}
 */
-.dashboard-project {-moz-border-radius: 7px;-webkit-border-radius: 7px;width:640px; padding: 5px; background-color: #F8F8F8; height: 170px; margin-bottom: 5px; border: 1px solid #eaeaea}
+.dashboard-project {-moz-border-radius: 7px;-webkit-border-radius: 7px;width:740px; padding: 5px; background-color: #F8F8F8; height: 100%; margin-bottom: 5px; border: 1px solid #eaeaea}
 .dashboard-project-name a {color: #3a87a2;font-family: 'Georgia, serif'; font-size: 30px;margin:15px 10px 5px 0px}
 .dashboard-project-quick-action-links  {display:none;float:right; margin: 4px;font-size: 13px}
 .dashboard-project-quick-action-links  ul {list-style-type: none}
 .dashboard-project-quick-action-links  ul li {list-style-type: none}
 .dashboard-project-quicklinks {font-size: 11px;font-family: Verdana}
 .dashboard-project-nav-links a{font-size: 11px;font-family: Verdana}
-.dashboard-project-description {height: 60px;width: 500px;font-size: 13px;float:left}
-.dashboard-project-stats {font-family:verdana;font-size:11px;text-align:left;float:left;color: #aeaeae}
+.dashboard-project-description {width: 450px;font-size: 13px;float:left;margin-bottom:5px}
+.dashboard-milestone-stats {width:125px;padding: 5px;background-color:#f0efef;font-family:verdana;font-size:11px;text-align:left;float:left;color: #aeaeae}
+.dashboard-project-stats {width:125px;height:200px;margin-left: 5px;padding: 5px;background-color:#f0efef;font-family:verdana;font-size:11px;text-align:left;float:left;color: #aeaeae}
 .tasks-complete {clear:both}
 
 .dashboard-project-recent-tasks {float:left}
 
-#dashboard-actions {margin-left:30px;float:left}
+#dashboard-actions {margin-left:30px;float:right}
 #dashboard-actions ul {list-style-type: none;}
 #dashboard-actions ul li {font-size: 18px; padding: 5px 0px 5px 5px}
 
 .no-list-type {list-style-type:none}
-.no-list-type li {padding-top: 4px}
+.no-list-type li {padding-top: 2px}
+.margin-ten li{padding-top: 10px}
 .no-list-type .small-text {margin-bottom: -5px}
-
-
-

@@ -14,6 +14,10 @@ class Project < ActiveRecord::Base
     tasks.where(:status => 'completed').count  
   end
 
+  def tasks_by_status(status)
+    tasks.where(:status => status)
+  end
+
   def number_of_tasks
     tasks.count  
   end
