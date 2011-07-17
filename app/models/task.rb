@@ -9,6 +9,7 @@ class Task < ActiveRecord::Base
               :in_progress => "In Progress",
               :completed => "Completed"}
 
+
   def to_in_progress
     update_attribute(:status, "in_progress") 
   end

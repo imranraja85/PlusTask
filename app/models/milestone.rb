@@ -7,6 +7,10 @@ class Milestone < ActiveRecord::Base
     user
   end
 
+  def name_and_due_date
+    "#{name} - #{due_date.strftime("%m/%d/%Y")}"  
+  end
+
   def completed_tasks
     tasks.where(:status => 'completed')  
   end

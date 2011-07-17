@@ -26,7 +26,7 @@
 
         <li>
           <%= f.label :milestone_id %>
-          <%= f.select :milestone_id , options_from_collection_for_select(@project.milestones, "id", "due_date")%>
+          <%= f.select :milestone_id , options_from_collection_for_select(@project.milestones, "id", "name_and_due_date")%>
         </li>
         <li>
           <%= hidden_field_tag :project_id, @project.id %>
