@@ -9,6 +9,7 @@ gem "mysql2", '~> 0.2.6'
 gem "jquery-rails"
 gem "vpim"
 gem "devise"
+gem "carrierwave"
 #gem "paperclip", "~> 2.3"
 
 # Use unicorn as the web server
@@ -29,6 +30,6 @@ gem "devise"
 # put test-only gems in this group so their generators
 # and rake tasks are available in development mode:
 group :development, :test do  
- # gem 'webrat'                 
+  gem 'webrat'                 
   gem 'ruby-debug19'
 end
