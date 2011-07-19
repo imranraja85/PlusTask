@@ -7,11 +7,10 @@
 </table>
 
 <div class="floatR">
-  <%#= render :partial => 'milestones/milestone_stats', :locals => {:project => @project}%>
+  <%= render :partial => 'milestones/milestone_stats', :locals => {:project => @project}%>
   <%= render :partial => 'projects/project_stats', :locals => {:project => @project}%>
 </div>
 
-<div class="clear"></div>
 
 <div id="overview-actions">
   <ul>
@@ -30,7 +29,7 @@
     <th>Percentage Complete</th>
   </tr>
   <% @project.milestones.each do |milestone| %>
-    <tr>
+    <tr class="<%= cycle('odd','even') %>">
       <td><%=milestone.name%></td>
       <td><%=milestone.due_date%></td>
       <td><%=number_to_percentage(milestone.percentage_complete, :precision => 2)%></td>
@@ -47,15 +46,8 @@
 </div>
 
 <div class="overview-subcontext">
-  <h2>Recent People</h2><br/>
-  <% @project.users.each do |user| %>
-    <%= user.name %><br/>
-  <% end %>
-</div>
-
-<div class="overview-subcontext">
   <h2>Recent Comments</h2><br/>
-  <% @project.users.each do |user| %>
-    <%= user.name %><br/>
+  <% @project.comments.each do |comment| %>
+    <%= comment.text %><br/>
   <% end %>
 </div>
