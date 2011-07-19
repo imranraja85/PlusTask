@@ -16,12 +16,12 @@
 .employees{padding: 5px;margin-right: 300px;width: 200px;float:right;}
 .submenu-links a {font-size: 13px; color: black}
 .project-status {color: #444444;padding-left: 10px;font-size: 14px}
-#overview-details {width: 40%}
+#overview-details {width: 40%; float:left}
 #overview-details .label-header {font-weight: bold}
 .overview-project-description {width: 700px;float:left}
 #overview-actions {float:right;padding-right:25px}
 #overview-actions li {list-style-type: none}
-#overview-actions ul li {font-size: 18px; padding: 5px 0px 5px 5px}
+#overview-actions ul li {font-size: 11px; padding: 5px 0px 5px 5px}
 .overview-subcontext {border: 1px dashed #363636; width: 255px;padding:10px;float:left}
 
 /* projects left hand nav */

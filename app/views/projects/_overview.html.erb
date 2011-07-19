@@ -1,20 +1,42 @@
-<span class="lime-green-header"><%= @project.name %></span>
+<span class="lime-green-header"><%= @project.name %></span><br/>
 
 <table id="overview-details">
   <tr><td class="label-header">Project Owner</td><td> <%= @project.owner.name %></td></tr>
   <tr><td class="label-header">Status</td><td><%= @project.status %></td></tr>
   <tr><td class="label-header">Created</td><td><%= fmt_us(@project.created_at) %></td></tr>
 </table>
+
+<div class="floatR">
+  <%#= render :partial => 'milestones/milestone_stats', :locals => {:project => @project}%>
+  <%= render :partial => 'projects/project_stats', :locals => {:project => @project}%>
+</div>
+
 <div class="clear"></div>
 
 <div id="overview-actions">
   <ul>
-    <li><%= button_to "+ Add a task", tasks_project_path(@project), :method => :get %></li>
-    <li><%= button_to "+ Add a person", new_user_path %></li>
-    <li><%= button_to "+ Upload a file", new_user_path %></li>
+    <li class="margin-ten"> <%= link_to_lightbox " + Add a task", new_project_task_path(@project),{:class => 'action-link', :remote => true} %></li>
+    <li class="margin-ten"> <%= link_to_lightbox " + Add a milestone", new_project_milestone_path(@project), {:class => 'action-link', :remote => true}%></li>
+    <li class="margin-ten"> <%= link_to_lightbox " + Add a person", new_project_milestone_path(@project), {:class => 'action-link', :remote => true}%></li>
+    <li class="margin-ten"> <%= link_to_lightbox " + Upload a file", new_project_milestone_path(@project), {:class => 'action-link', :remote => true}%></li>
   </ul>
 </div>
-
+<div class="clear"></div>
+<h2>Milestone Details<h2>
+<table class="compact-table">
+  <tr>
+    <th>Name</th>
+    <th>Due Date</th>
+    <th>Percentage Complete</th>
+  </tr>
+  <% @project.milestones.each do |milestone| %>
+    <tr>
+      <td><%=milestone.name%></td>
+      <td><%=milestone.due_date%></td>
+      <td><%=number_to_percentage(milestone.percentage_complete, :precision => 2)%></td>
+    </tr>
+  <% end %>
+</table>
 
 <div class="clear"></div>
 <div class="overview-subcontext">

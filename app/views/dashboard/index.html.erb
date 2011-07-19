@@ -18,7 +18,7 @@
         <span class="dashboard-project-name"><%= link_to project.name, project_path(project) %></span>
         <div class="dashboard-project-quicklinks">
           <span class="dashboard-project-nav-links">
-            <%#= link_to "Overview", project_path(project) %>
+            <%= link_to "Overview", project_path(project) %> |
             <%= link_to "Milestones", milestones_project_path(project) %> | 
             <%= link_to "Tasks", tasks_project_path(project) %> | 
             <%= link_to "People on this project", people_project_path(project) %> |
@@ -35,28 +35,8 @@
         </ol>
       </div>
       </div>
-      <div class="dashboard-milestone-stats">
-        <ul class="no-list-type">
-          <li class="small-text"><span class="weak-grey uppercase" style="font-weight:bold;border-bottom: 1px dotted black">Milestone status</span></li>
-          <li><span class="percent-complete"><%= percentage_of_tasks_completed_for_a_milestone(project) %></li>
-          <li class="small-text"><span class="weak-grey uppercase">NEXT MILESTONE</span></li>
-          <li><span class="popping-green"><%= project.current_milestone.try(:name) ? project.current_milestone.try(:name) : 'No Milestone'%></span></li>
-          <li class="small-text"><span class="weak-grey uppercase">Due Date</span></li>
-          <li><span class="popping-green"><%= project.current_milestone.try(:due_date) ? fmt_us(project.current_milestone.try(:due_date)) : 'No Milestone'%></span></li>
-          <li class="small-text"><span class="tasks-complete-text weak-grey">TASKS COMPLETE</span></li>
-          <li><span class="tasks-complete"><%= tasks_status_for_milestone(project) %></span></li>
-        </ul>
-      </div>
-      <div class="dashboard-project-stats">
-        <ul class="no-list-type">
-          <li class="small-text"><span class="weak-grey uppercase" style="font-weight:bold;border-bottom: 1px dotted black">Project status</span></li>
-          <li><span class="percent-complete"><%= percentage_of_tasks_completed_for_a_project(project) %></li>
-          <li class="small-text"><span class="weak-grey uppercase">Completion Date</span></li>
-          <li><span class="popping-green"><%= project.live_date ? fmt_us(project.try(:live_date)) : 'No Date Set'%></span></li>
-          <li class="small-text"><span class="tasks-complete-text weak-grey">TASKS COMPLETE</span></li>
-          <li><span class="tasks-complete"><%= tasks_status_for_project(project) %></span></li>
-        </ul>
-      </div>
+      <%= render :partial => 'milestones/milestone_stats', :locals => {:project => project}%>
+      <%= render :partial => 'projects/project_stats', :locals => {:project => project}%>
       <div class="clear"></div>
     </div>
   <% end %>
