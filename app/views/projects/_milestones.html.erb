@@ -36,7 +36,7 @@
   </thead>
   <tbody>
     <% @milestone.tasks.each do |task| %>
-      <tr>
+      <tr class="<%= cycle("odd","even")%>"> 
         <td><%=task.try(:name) %></td>
         <td><%=truncate(task.try(:description), :length => 60) %></td>
         <td><%=task.try(:status).humanize %></td>

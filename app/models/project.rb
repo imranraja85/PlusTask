@@ -25,4 +25,14 @@ class Project < ActiveRecord::Base
   def current_milestone
     milestones.where("due_date >= ?",  Date.today).limit(1).first
   end
+
+  def filter_tasks(filter_params)
+    @tasks = tasks
+
+    if filter_params && filter_params[:milestone_id] != "All Milestones"
+      @tasks = @tasks.where(:milestone_id => filter_params[:milestone_id])
+    end
+
+    @tasks
+  end
 end

@@ -61,12 +61,13 @@ class ProjectsController < ApplicationController
   end
   
   def tasks
-    @assigned_to_user = params[:assigned_to]
-    if params[:assigned_to]
-      @tasks = @project.tasks.where(:assigned_to => params[:assigned_to]).order("updated_at desc").group_by(&:status) 
-    else
-      @tasks = @project.tasks.order("updated_at desc").group_by(&:status) 
-    end
+    #if params[:assigned_to]
+    #  @tasks = @project.tasks.where(:assigned_to => params[:assigned_to]).order("updated_at desc").group_by(&:status) 
+    #else
+      #@tasks = @project.tasks.where(:milestone_id => params[:filter][:milestone_id]).order("updated_at desc").group_by(&:status) 
+    #end
+
+    @tasks = @project.filter_tasks(params[:filter]).order("updated_at desc").group_by(&:status)
 
     respond_to do |format|
       format.html {render :action => 'show'}

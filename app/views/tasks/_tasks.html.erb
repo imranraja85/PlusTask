@@ -1,6 +1,14 @@
 <%=  stylesheet_link_tag 'tasks' %> 
 <%= javascript_include_tag 'app/tasks.js' %>
 <p>Create and assign tasks to people and view daily progress</p>
+
+<%= form_tag tasks_project_path, {:method => :get} do |f| %>
+  <span style="text-transform:uppercase;font-size:14px">
+    <%= select_tag "[filter]milestone_id", "<option>All Milestones</option>".html_safe + options_from_collection_for_select(@project.milestones, "id", "name", params[:filter] && params[:filter][:milestone_id])%>
+    <%= submit_tag "Filter", :class => 'submit-task' %>
+ </span>
+<% end %>
+
 <%= link_to "All Tasks", tasks_project_path(@project), :remote => true %> | 
 <%= link_to "My Tasks", tasks_project_path(:id => @project, :assigned_to => current_user.id),:remote => true %>
 <span><%= link_to "Add a task", new_project_task_path(@project), :remote => true, :class => "action-link floatR" %></span>

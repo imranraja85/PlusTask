@@ -31,7 +31,7 @@
   <% @project.milestones.each do |milestone| %>
     <tr class="<%= cycle('odd','even') %>">
       <td><%=milestone.name%></td>
-      <td><%=milestone.due_date%></td>
+      <td><%=fmt_us(milestone.due_date)%></td>
       <td><%=number_to_percentage(milestone.percentage_complete, :precision => 2)%></td>
     </tr>
   <% end %>
