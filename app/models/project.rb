@@ -33,6 +33,10 @@ class Project < ActiveRecord::Base
       @tasks = @tasks.where(:milestone_id => filter_params[:milestone_id])
     end
 
+    if filter_params && filter_params[:person_id] != "All People"
+      @tasks = @tasks.where(:assigned_to => filter_params[:person_id])
+    end
+
     @tasks
   end
 end

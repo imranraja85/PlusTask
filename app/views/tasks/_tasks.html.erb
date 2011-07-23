@@ -5,6 +5,7 @@
 <%= form_tag tasks_project_path, {:method => :get} do |f| %>
   <span style="text-transform:uppercase;font-size:14px">
     <%= select_tag "[filter]milestone_id", "<option>All Milestones</option>".html_safe + options_from_collection_for_select(@project.milestones, "id", "name", params[:filter] && params[:filter][:milestone_id])%>
+    <%= select_tag "[filter]person_id", "<option>All People</option>".html_safe + options_from_collection_for_select(@project.users, "id", "name", params[:filter] && params[:filter][:person_id])%>
     <%= submit_tag "Filter", :class => 'submit-task' %>
  </span>
 <% end %>
