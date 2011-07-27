@@ -23,7 +23,7 @@
 <div class="clear"></div>
 <div class="tasks-container">
   <div class="task-grid tasks-first">
-    <h1>Tasks To Do</h1>
+    <h1>NOT STARTED</h1>
     <ul class="tasks-list">
       <% if @tasks["to_do"] %>
         <% @tasks["to_do"].each_with_index do |task, index| %>
@@ -36,7 +36,7 @@
     </ul>
   </div>
   <div class="task-grid tasks-in-progress" id="tasks-in-progress">
-    <h1>Tasks In Progress</h1>
+    <h1>IN PROGRESS</h1>
     <ul class="tasks-in-progress-list">
       <% if @tasks["in_progress"] %>
         <% @tasks["in_progress"].each_with_index do |task, index| %>
@@ -49,7 +49,7 @@
     </ul>
   </div>
   <div class="task-grid tasks-last">
-    <h1>Tasks Completed</h1>
+    <h1>VERIFY & ACCEPT</h1>
     <ul class="tasks-completed-list">
       <% if @tasks["completed"] %>
         <% @tasks["completed"].each_with_index do |task, index| %>

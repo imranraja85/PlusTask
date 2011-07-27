@@ -1,4 +1,12 @@
 class MilestonesController < ApplicationController
+  layout 'manageme'
+
+  def index
+    #TODO: THIS IS WRONG. YOU NEED TO SCOPE OUT THE MILESTONES TIED TO A COMPANY/USER
+    @upcoming_milestones = Milestone.where(["due_date < ?", Date.today]).group_by(&:due_date)
+    @past_milestones = Milestone.where(["due_date >= ?", Date.today]).group_by(&:due_date)
+  end
+
   def new
     @project = Project.find(params[:project_id])  
     @milestone = Milestone.new

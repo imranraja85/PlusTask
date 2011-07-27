@@ -22,11 +22,14 @@
       <div class="floatR"> 
        Welcome, <%= current_user.name %>!&nbsp;  <%= link_to "Settings", "" %> | &nbsp;<%= link_to "Logout", destroy_user_session_path %>
       </div>
+      <div class="clear"></div>
+
+      <div id="nav-container">
+        <%= render :partial => 'layouts/header/navigation' %>
+      </div>
+
     </div>
     <div id="body">
-      <div id="nav-container">
-        <%#= render :partial => 'layouts/header/navigation' %>
-      </div>
       <div id="content">
         <% flash.each do |name, msg| -%>
           <%= content_tag :div, msg, :id => "flash_#{name}" %>

@@ -24,6 +24,7 @@
 .dashboard-project-description {width: 450px;font-size: 13px;float:left;margin-bottom:5px}
 .dashboard-milestone-stats {width:130px;background-color:#ffffff; border: 1px solid #306380;font-family:verdana;font-size:11px;text-align:left;float:left;color: #aeaeae}
 .dashboard-milestone-stats li {padding:0 5px 0 5px}
+.dashboard-milestone-stats li a {color: #9db401;}
 .dashboard-project-stats {width:125px;height:200px;margin-left: 5px;border: 1px solid #306380;background-color:#ffffff;font-family:verdana;font-size:11px;text-align:left;float:left;color: #aeaeae}
 .dashboard-project-stats li {padding:0 5px 0 5px}
 .tasks-complete {clear:both}
