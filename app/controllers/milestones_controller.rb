@@ -1,10 +1,11 @@
 class MilestonesController < ApplicationController
-  layout 'manageme'
+  layout 'manageme', :except => [:new]
 
   def index
+    @page_title = "Milestone Overview"
     #TODO: THIS IS WRONG. YOU NEED TO SCOPE OUT THE MILESTONES TIED TO A COMPANY/USER
-    @upcoming_milestones = Milestone.where(["due_date < ?", Date.today]).group_by(&:due_date)
-    @past_milestones = Milestone.where(["due_date >= ?", Date.today]).group_by(&:due_date)
+    @upcoming_milestones = Milestone.where(["due_date >= ?", Date.today]).group_by(&:due_date)
+    @past_milestones = Milestone.where(["due_date < ?", Date.today]).group_by(&:due_date)
   end
 
   def new

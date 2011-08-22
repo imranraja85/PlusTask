@@ -10,6 +10,10 @@ class Task < ActiveRecord::Base
               :completed => "Completed"}
 
 
+  def due
+    try(:milestone).try(:name_and_due_date)
+  end
+
   def to_in_progress
     update_attribute(:status, "in_progress") 
   end

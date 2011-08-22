@@ -1,4 +1,42 @@
+<h2>Upcoming Milestones</h2>
+
+<% @upcoming_milestones.each do |due_date, milestones| %>
+  <div class="grouped-milestone" style="border: 1px solid #aeaeae; margin-bottom: 5px; padding: 5px">
+    Due Date: <%= fmt_month_day_year(due_date) %> Contains milestones for <%= milestones.collect(&:name).join(" and ") %><br/>
+    <% milestones.each do |milestone| %>
+      <h2 class="popping-green"><%= milestone.name %></h2>
+      <table class="compact-table">
+        <thead>
+          <tr>
+            <th>Project</th>
+            <th>Milestone Name</th>
+            <th>Task</th>
+            <th>Status</th>
+            <th>Assigned To</th>
+          </tr>
+        </thead>
+        <% milestone.tasks.each do |task| %>
+        <tbody>
+          <tr class="<%= cycle("odd","even")%>">
+            <td><%= task.project.name %></td>
+            <td><%= task.milestone.name %></td>
+            <td><%= task.name %></td>
+            <td><%= task.status %></td>
+            <td><%= task.assigned_to_user %></td>
+          </tr>
+        </tbody>
+        <% end %>
+      </table>
+    <% end %>
+  </div>
+<% end %>
+
+<h2>Past Milestones</h2>
 <table>
-  <% @upcoming_milestones.each do |milestone| %>
+  <% @past_milestones.each do |due_date, milestones| %>
+    <%= due_date %>
+    <% milestones.each do |milestone| %>
+      <%= milestone.name %><br/>
+    <% end %>
   <% end %>
 </table>

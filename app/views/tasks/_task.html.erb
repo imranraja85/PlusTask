@@ -2,8 +2,9 @@
   <div id="task-header-with-name">
     <span class="task-name strong"><%= task.name %></span>
   </div>
-  <span class="task-person weak">Assigned To <%= task.try(:user).try(:name) %></span>
-  <span class="task-difficulty weak">Difficulty <%= task.difficulty %></span>
+  <span class="task-person weak">Milestone: <%= task.due %></span>
+  <span class="task-person weak">Assigned To: <%= task.try(:user).try(:name) %></span>
+  <span class="task-difficulty weak">Difficulty: <%= task.difficulty %></span>
   <span class="task-start"><%= display_link_based_on_task_status(task) %></span>
   <span class="task-show"><%= link_to 'View Details', task_path(task), :remote => true %></span> | 
   <span class="task-edit"><%= link_to 'Edit', edit_task_path(task, :project_id => @project.id), :remote => true %></span>

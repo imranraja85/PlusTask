@@ -12,8 +12,6 @@
   </head>
   <body>
     <div id="top-header">
-      <div class="floatL"><%= link_to "Go to Dashboard", dashboard_path %></div>
-
       <div class="floatL" id="company-header">
         <%= link_to current_user.company, dashboard_path %> 
         <span class="lime-green-header"><%= @page_title %></span>

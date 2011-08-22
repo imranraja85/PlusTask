@@ -9,7 +9,7 @@ gem "mysql2", '~> 0.2.6'
 gem "jquery-rails"
 gem "vpim"
 gem "devise"
-gem "carrierwave"
+#gem "carrierwave"
 #gem "paperclip", "~> 2.3"
 
 # Use unicorn as the web server
