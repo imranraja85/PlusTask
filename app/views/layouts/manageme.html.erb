@@ -11,21 +11,26 @@
     <%= csrf_meta_tag %>
   </head>
   <body>
-    <div id="top-header">
-      <div class="floatL" id="company-header">
-        <%= link_to current_user.company, dashboard_path %> 
-        <span class="lime-green-header"><%= @page_title %></span>
-      </div>
+    <div id="header-container">
+      <div id="top-header">
+        <div class="floatL" id="company-header">
+          <%= link_to current_user.company, dashboard_path %> 
+          <span class="lime-green-header"><%= @page_title %></span>
+        </div>
 
-      <div class="floatR"> 
-       Welcome, <%= current_user.name %>!&nbsp;  <%= link_to "Settings", "" %> | &nbsp;<%= link_to "Logout", destroy_user_session_path %>
-      </div>
-      <div class="clear"></div>
+        <div class="floatR"> 
+         Welcome, <%= current_user.name %>!&nbsp;  <%= link_to "Settings", "" %> | &nbsp;<%= link_to "Logout", destroy_user_session_path %>
+        </div>
+        <div style="height: 0px;float:right">
+          <%= image_tag("new-logo.png") %>
+        </div>
 
-      <div id="nav-container">
-        <%= render :partial => 'layouts/header/navigation' %>
-      </div>
+        <div id="nav-container">
+          <%= render :partial => 'layouts/header/navigation' %>
+        </div>
+        <div class="clear"></div>
 
+      </div>
     </div>
     <div id="body">
       <div id="content">
