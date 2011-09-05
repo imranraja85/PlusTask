@@ -5,9 +5,9 @@ class Task < ActiveRecord::Base
   has_many :comments, :as => :commentable
 
   #STATUSES = ["to_do", "in_progress", "completed"]
-  STATUSES = {:to_do => "To Do",
-              :in_progress => "In Progress",
-              :completed => "Completed"}
+  STATUSES = {"To Do" => :to_do,
+              "In Progress" => :in_progress,
+              "Completed" => :completed}
 
 
   def due
