@@ -32,7 +32,7 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    @project = Project.new(params[:project].merge!(:created_by_id => current_user.id))
+    @project = Project.new(params[:project].merge!(:created_by_id => current_user.id, :company_id => current_user.company_id))
     if @project.save
       flash[:notice] = "Successfully added a new project!"
       redirect_to project_path(@project)
@@ -89,7 +89,7 @@ class ProjectsController < ApplicationController
 
   private
     def load_project
-      @project = Project.find(params[:id])  
+      @project = Project.where(:id => params[:id], :company_id => current_user.company_id).first
     end
 
     def set_project_name

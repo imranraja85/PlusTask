@@ -2,6 +2,7 @@ class CreateMilestones < ActiveRecord::Migration
   def self.up
     up_sql = %Q(CREATE TABLE `milestones` (
                 `id` SMALLINT(11) UNSIGNED NOT NULL AUTO_INCREMENT,           
+                `company_id` INT(11) UNSIGNED NOT NULL COMMENT 'Foreign key to company table',           
                 `created_by` INT(11) UNSIGNED COMMENT 'Person who created the milestone',           
                 `name` VARCHAR(255) NULL COMMENT 'Name of the milestone',
                 `assigned_to` INT(11) UNSIGNED COMMENT 'Person who is responsible for the milestone',           

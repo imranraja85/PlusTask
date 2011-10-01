@@ -1,7 +1,7 @@
 <%= stylesheet_link_tag 'rest/milestones.css' %>
 <span class="floatR" style="margin-top:5px"><%= link_to_lightbox "Add a new Milestone", new_project_milestone_path(@project), :class => "action-link" %></span>
 <%= form_tag milestones_project_path, {:method => :get} do |f| %>
-  <span style="text-transform:uppercase;font-size:14px"><%= select_tag "milestone_id", options_from_collection_for_select(@project.milestones, "id", "name") %>
+  <span style="text-transform:uppercase;font-size:14px"><%= select_tag "milestone_id", options_from_collection_for_select(@project.milestones, "id", "name", params[:milestone_id]) %>
     <%= submit_tag "Go to milestone", :class => 'submit-task' %></span>
 <% end %>
 <div class="clear"></div>

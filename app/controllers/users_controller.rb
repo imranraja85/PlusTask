@@ -3,12 +3,11 @@ class UsersController < ApplicationController
   layout "lightbox", :except => [:index]
 
   def index
-    @event = Event.new
-
+    @page_title = "Users Overview"
     if params[:user] && params[:user]["department"] && params[:user]["department"].present?
-      @users = User.by_department(params[:user][:department])
+      @users = User.where(:company_id => current_user.company_id).by_department(params[:user][:department])
     else
-      @users = User.all  
+      @users = User.where(:company_id => current_user.company_id)
     end
    # if params[:send]
    #   UserMailer.welcome_user(User.first,params[:date]).deliver
@@ -26,7 +25,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(params[:user])
+    @user = User.new(params[:user].merge(:company_id => current_user.company_id))
     if @user.save
       flash[:notice] = "Employee successfully added"
       redirect_to root_url

@@ -1,4 +1,5 @@
 class Project < ActiveRecord::Base
+  belongs_to :company
   has_many :project_user
   has_many :users, :through => :project_user
   has_many :tasks

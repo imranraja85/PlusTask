@@ -1,8 +1,8 @@
 <div class="main-quick-links">
   <ul>
-    <li class="menu-item-home"><%= link_to "Dashboard", dashboard_path %></li>
-    <li class="menu-item-projects"><%= link_to "Milestones Overview", milestones_path %></li>
-    <li class="menu-item-people"><%= link_to "People Overview", users_path %></li>
+    <li class="menu-item-home <% if params[:action] == 'index' && params[:controller] == 'dashboard' %> current <% end %>"><%= link_to "Dashboard", dashboard_path %></li>
+    <li class="menu-item-projects <% if params[:action] == 'index' && params[:controller] == 'milestones' %> current <% end %>"><%= link_to "Milestones Overview", milestones_path %></li>
+    <li class="menu-item-people <% if params[:action] == 'index' && params[:controller] == 'users' %> current <% end %>"><%= link_to "People Overview", users_path %></li>
   </ul>
 </div>
 <div class="clear"></div>

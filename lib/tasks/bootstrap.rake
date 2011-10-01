@@ -11,6 +11,7 @@ namespace :bootstrap do
   desc 'Basic bootstrapping'   
   task :fill => :environment do
     Rake::Task["db:reload"].invoke
+    Seed::table_from_csv('companies')
     Seed::table_from_csv('projects')
     Seed::table_from_csv('users')
     Seed::table_from_csv('project_user')

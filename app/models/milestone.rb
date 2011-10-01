@@ -1,5 +1,6 @@
 class Milestone < ActiveRecord::Base
   belongs_to :project
+  belongs_to :company
   belongs_to :user, :foreign_key => :assigned_to
   has_many :tasks
 

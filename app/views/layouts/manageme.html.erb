@@ -14,7 +14,7 @@
     <div id="header-container">
       <div id="top-header">
         <div class="floatL" id="company-header">
-          <%= link_to current_user.company, dashboard_path %> 
+          <%= link_to current_user.try(:company).try(:name), dashboard_path %> 
           <span class="lime-green-header"><%= @page_title %></span>
         </div>
 
