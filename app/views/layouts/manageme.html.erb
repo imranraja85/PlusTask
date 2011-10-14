@@ -3,12 +3,14 @@
   <head>
     <title>PlusTask</title>
     <%= stylesheet_link_tag :all %>
-    <%#= stylesheet_link_tag "css/redmond/jquery-ui-1.8.7.custom.css" %>
     <%= javascript_include_tag :all %>
     <%= javascript_include_tag 'plugins/jquery.simplemodal.1.4.min.js' %>
     <%= javascript_include_tag 'plugins/ba-bbq.jquery.js' %>
     <%= javascript_include_tag 'app/lightbox2.js' %>
     <%= csrf_meta_tag %>
+
+    <%= javascript_include_tag "application" %>
+    <%= stylesheet_link_tag "application" %>
   </head>
   <body>
     <div id="header-container">
