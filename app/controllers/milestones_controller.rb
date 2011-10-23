@@ -7,6 +7,10 @@ class MilestonesController < ApplicationController
     @past_milestones = Milestone.where(["company_id = ? AND due_date < ?", current_user.company_id, Date.today]).group_by(&:due_date)
   end
 
+  def testing_index
+    @upcoming_milestones = Milestone.where(["due_date >= ?", Date.today]).group_by(&:due_date)
+  end
+
   def new
     @project = Project.find(params[:project_id])  
     @milestone = Milestone.new

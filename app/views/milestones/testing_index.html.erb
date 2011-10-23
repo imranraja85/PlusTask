@@ -1,0 +1,33 @@
+<div class="milestone-dates" style=" text-align:center; width: 200px; float: left; border: 1px solid #aeaeae; padding: 6px" >
+  <h2 style="font-size: 14px">Milestone Due Dates</h2><br/>
+  <span class="milestones-selection" style="padding-bottom: 6px"><%= link_to "Upcoming" %> | <%= link_to "Past" %></span>
+  <% @upcoming_milestones.each do |due_date, milestone| %>
+
+    <div class="date" style="text-align: center;background-color: #eaefff; border-radius: 4px; margin-bottom: 3px; padding: 6px;"> <%= link_to due_date.strftime("%B %d %Y"), nil, :class => 'popping-green green-link', :style => "color: #9DB401" %>
+    </div>
+  <% end %>
+</div>
+
+<div class="grouped-milestones" style="float:right;width: 75%">
+  <h1 class="popping-orange">Milestones due on October 31 2011</h1>
+
+  <% 1.upto(3) do %>
+    <div class="milestone-project-status" style="padding: 10px; margin-bottom: 5px; background-color: #fff9eb; overflow: hidden;">
+      <span style="font-size: 24px; color: black;padding-right: 2px; float:left">
+        SIP - Prototype Iteration<br/>
+        <span style="font-size: 14px"> View: <%= link_to "Tasks" %>  |  <%= link_to "People on this Project" %>  |  <%= link_to "Comments" %> </span><br/>
+      </span>
+      <span style="font-size: 14px; color: black;padding-right: 2px; float:right">
+        <span class="popping-orange">90%</span> <span class="uppercase weak-grey">Complete</span><br/>
+        <span class="popping-green">9</span> <span> out of </span><span class="popping-green">10</span> <span class="uppercase weak-grey">Tasks Complete</span> <br/>
+      </span>
+    </div>
+  <% end %>
+
+  <div class="milestone-tasks">
+  </div>
+  <div class="milestone-tasks">
+  </div>
+  <div class="milestone-tasks">
+  </div>
+</div>

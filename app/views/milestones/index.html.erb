@@ -1,11 +1,11 @@
-<h2 class="small-lime-green-header" style="margin-bottom: -7px">Milestones Overview</h2>
-<span class="dark-grey fourteen">All projects are grouped by milestone due dates so you can view progress across multiple projects</span>
+<span class="dark-grey fourteen">Milestones are grouped by due date in order to view progress across all active project</span><br/>
 
+<h2>Upcoming Milestones</h2>
 <% @upcoming_milestones.each do |due_date, milestones| %>
-  <div class="grouped-milestone" style="border: 1px solid #aeaeae; margin: 5px 0px 5px 0px; padding-top:2px;padding: 5px">
+  <div class="grouped-milestone" style="border-bottom: 1px dashed #aeaeae; margin: 5px 0px 5px 0px; padding-top:2px;padding: 5px">
     <span class="popping-orange"><%= due_date.strftime("%B %d %Y")%></span> <br/>
 
-      <span class="dark-grey fourteen">Listing of projects due for this milestone deadline</span>
+    <span class="dark-grey fourteen">There are <span class="popping-green"><%= milestones.collect {|milestone| milestone.project.name}.uniq.count %></span> projects with a milestone deadline of <span class="popping-orange" style="font-size:16px"><%= due_date.strftime("%B %d %Y") %> </span></span>
       <table class="compact-table">
         <tr><th>Project</th><th>Milestone Name</th><th>Milestone Status</th><th>Assigned To</th></tr>
         <% milestones.each do |milestone| %>
@@ -18,48 +18,28 @@
         <% end %>
       </table>
 
-    <% if false %>
-      <% milestones.each do |milestone| %>
-        <%= render :partial => 'milestones/milestone_stats_compact', :locals => {:milestone => milestone} %>
-      <% end %>
-    <% end %>
-
-    <% if false %>
-      <table class="compact-table">
-        <thead>
-          <tr>
-            <th>Project</th>
-            <th>Milestone Name</th>
-            <th>Task</th>
-            <th>Status</th>
-            <th>Assigned To</th>
-          </tr>
-        </thead>
-        <tbody>
-          <% milestones.each do |milestone| %>
-            <% milestone.tasks.each do |task| %>
-              <tr class="<%= cycle("odd","even")%>">
-                <td><%= task.project.name %></td>
-                <td><%= task.milestone.name %></td>
-                <td><%= task.name %></td>
-                <td><%= task.status %></td>
-                <td><%= task.assigned_to_user %></td>
-              </tr>
-            <% end %>
-          <% end %>
-        </tbody>
-      </table>
-    <% end %>
   <div class="clear"></div>
   </div>
 <% end %>
 
 <h2>Past Milestones</h2>
-<table>
-  <% @past_milestones.each do |due_date, milestones| %>
-    <%= due_date %>
-    <% milestones.each do |milestone| %>
-      <%= milestone.name %><br/>
-    <% end %>
-  <% end %>
-</table>
+<% @past_milestones.each do |due_date, milestones| %>
+  <div class="grouped-milestone" style="border-bottom: 1px dashed #aeaeae; margin: 5px 0px 5px 0px; padding-top:2px;padding: 5px">
+    <span class="popping-orange"><%= due_date.strftime("%B %d %Y")%></span> <br/>
+
+    <span class="dark-grey fourteen">There are <span class="popping-green"><%= milestones.collect {|milestone| milestone.project.name}.uniq.count %></span> projects with a milestone deadline of <span class="popping-orange" style="font-size:16px"><%= due_date.strftime("%B %d %Y") %> </span></span>
+      <table class="compact-table">
+        <tr><th>Project</th><th>Milestone Name</th><th>Milestone Status</th><th>Assigned To</th></tr>
+        <% milestones.each do |milestone| %>
+          <tr class="<%= cycle("odd","even") %>">
+            <td><%= milestone.project.name %></td>
+            <td><%= milestone.name %></td>
+            <td><%= number_to_percentage(milestone.percentage_complete, :precision => 0) %></td>
+            <td><%= milestone.try(:assigned_to).try(:name) %></td>
+          </tr>
+        <% end %>
+      </table>
+
+  <div class="clear"></div>
+  </div>
+<% end %>

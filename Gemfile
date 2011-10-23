@@ -18,7 +18,7 @@ gem "devise"
 # and rake tasks are available in development mode:
 group :development, :test do  
   gem 'webrat'                 
-  #gem 'ruby-debug19'
+  gem 'ruby-debug19'
 end
 
 # Gems used only for assets and not required

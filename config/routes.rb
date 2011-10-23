@@ -24,7 +24,11 @@ Manageme::Application.routes.draw do
     resources :milestones
   end
 
-  resources :milestones
+  resources :milestones do
+    collection do
+      get :testing_index
+    end
+  end
 
   resources :tasks do
     resources :comments
@@ -75,7 +79,7 @@ Manageme::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
   #root :to => "home#index"
-  root :to => "dashboard#index"
+  root :to => "home#index"
 
   # See how all your routes lay out with "rake routes"
 
