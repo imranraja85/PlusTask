@@ -1,0 +1,45 @@
+<span class="dark-grey fourteen">Milestones are grouped by due date in order to view progress across all active project</span><br/>
+
+<h2>Upcoming Milestones</h2>
+<% @upcoming_milestones.each do |due_date, milestones| %>
+  <div class="grouped-milestone" style="border-bottom: 1px dashed #aeaeae; margin: 5px 0px 5px 0px; padding-top:2px;padding: 5px">
+    <span class="popping-orange"><%= due_date.strftime("%B %d %Y")%></span> <br/>
+
+    <span class="dark-grey fourteen">There are <span class="popping-green"><%= milestones.collect {|milestone| milestone.project.name}.uniq.count %></span> projects with a milestone deadline of <span class="popping-orange" style="font-size:16px"><%= due_date.strftime("%B %d %Y") %> </span></span>
+      <table class="compact-table">
+        <tr><th>Project</th><th>Milestone Name</th><th>Milestone Status</th><th>Assigned To</th></tr>
+        <% milestones.each do |milestone| %>
+          <tr class="<%= cycle("odd","even") %>">
+            <td><%= milestone.project.name %></td>
+            <td><%= milestone.name %></td>
+            <td><%= number_to_percentage(milestone.percentage_complete, :precision => 0) %></td>
+            <td><%= milestone.try(:assigned_to).try(:name) %></td>
+          </tr>
+        <% end %>
+      </table>
+
+  <div class="clear"></div>
+  </div>
+<% end %>
+
+<h2>Past Milestones</h2>
+<% @past_milestones.each do |due_date, milestones| %>
+  <div class="grouped-milestone" style="border-bottom: 1px dashed #aeaeae; margin: 5px 0px 5px 0px; padding-top:2px;padding: 5px">
+    <span class="popping-orange"><%= due_date.strftime("%B %d %Y")%></span> <br/>
+
+    <span class="dark-grey fourteen">There are <span class="popping-green"><%= milestones.collect {|milestone| milestone.project.name}.uniq.count %></span> projects with a milestone deadline of <span class="popping-orange" style="font-size:16px"><%= due_date.strftime("%B %d %Y") %> </span></span>
+      <table class="compact-table">
+        <tr><th>Project</th><th>Milestone Name</th><th>Milestone Status</th><th>Assigned To</th></tr>
+        <% milestones.each do |milestone| %>
+          <tr class="<%= cycle("odd","even") %>">
+            <td><%= milestone.project.name %></td>
+            <td><%= milestone.name %></td>
+            <td><%= number_to_percentage(milestone.percentage_complete, :precision => 0) %></td>
+            <td><%= milestone.try(:assigned_to).try(:name) %></td>
+          </tr>
+        <% end %>
+      </table>
+
+  <div class="clear"></div>
+  </div>
+<% end %>

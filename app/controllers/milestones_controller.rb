@@ -1,14 +1,21 @@
 class MilestonesController < ApplicationController
   layout 'manageme', :except => [:new]
 
+  #def index
+  #  @page_title = "Milestone Overview"
+  #  @upcoming_milestones = Milestone.where(["company_id = ? AND due_date >= ?", current_user.company_id, Date.today]).group_by(&:due_date)
+  #  @past_milestones = Milestone.where(["company_id = ? AND due_date < ?", current_user.company_id, Date.today]).group_by(&:due_date)
+  #end
+
   def index
-    @page_title = "Milestone Overview"
-    @upcoming_milestones = Milestone.where(["company_id = ? AND due_date >= ?", current_user.company_id, Date.today]).group_by(&:due_date)
-    @past_milestones = Milestone.where(["company_id = ? AND due_date < ?", current_user.company_id, Date.today]).group_by(&:due_date)
+    @upcoming_milestones = Milestone.where(["company_id = ? and due_date >= ?", current_user.company_id, Date.today]).group("due_date")
+    @past_milestones     = Milestone.where(["company_id = ? AND due_date < ?", current_user.company_id, Date.today]).group("due_date")
   end
 
-  def testing_index
-    @upcoming_milestones = Milestone.where(["due_date >= ?", Date.today]).group_by(&:due_date)
+  # AJAX
+  # Given a date, loads all milestones associated with that date
+  def load_milestone
+    Milestone.where(["company_id = ? and due_date = ?", current_user.company_id, params[:due_date]])
   end
 
   def new

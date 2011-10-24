@@ -1,45 +1,33 @@
-<span class="dark-grey fourteen">Milestones are grouped by due date in order to view progress across all active project</span><br/>
+<div class="milestone-dates" style=" text-align:center; width: 200px; float: left; border-right: 1px solid #aeaeae; padding: 6px" >
+  <h2 style="font-size: 14px">Milestone Deadlines</h2><br/>
+  <span class="milestones-selection" style="padding-bottom: 6px"><%= link_to "Upcoming" %> | <%= link_to "Past" %></span>
+  <% @upcoming_milestones.each do |milestone| %>
 
-<h2>Upcoming Milestones</h2>
-<% @upcoming_milestones.each do |due_date, milestones| %>
-  <div class="grouped-milestone" style="border-bottom: 1px dashed #aeaeae; margin: 5px 0px 5px 0px; padding-top:2px;padding: 5px">
-    <span class="popping-orange"><%= due_date.strftime("%B %d %Y")%></span> <br/>
+    <div class="date" style="text-align: center; padding: 6px;"> <%= link_to milestone.due_date.strftime("%B %d %Y"), nil, :class => 'popping-green green-link', :id => 'url', :style => "font-size: 14px;color: #9DB401" %>
+    </div>
+  <% end %>
+</div>
 
-    <span class="dark-grey fourteen">There are <span class="popping-green"><%= milestones.collect {|milestone| milestone.project.name}.uniq.count %></span> projects with a milestone deadline of <span class="popping-orange" style="font-size:16px"><%= due_date.strftime("%B %d %Y") %> </span></span>
-      <table class="compact-table">
-        <tr><th>Project</th><th>Milestone Name</th><th>Milestone Status</th><th>Assigned To</th></tr>
-        <% milestones.each do |milestone| %>
-          <tr class="<%= cycle("odd","even") %>">
-            <td><%= milestone.project.name %></td>
-            <td><%= milestone.name %></td>
-            <td><%= number_to_percentage(milestone.percentage_complete, :precision => 0) %></td>
-            <td><%= milestone.try(:assigned_to).try(:name) %></td>
-          </tr>
-        <% end %>
-      </table>
+<div class="milestones-container" style="float:right;width: 75%">
+  <h1 class="popping-orange">Milestones due on October 31 2011</h1>
 
-  <div class="clear"></div>
+  <% 1.upto(3) do %>
+    <div class="milestone-project-status" style="padding: 10px; margin-bottom: 5px; background-color: #fff9eb; overflow: hidden;">
+      <span style="font-size: 24px; color: black;padding-right: 2px; float:left">
+        SIP - Prototype Iteration<br/>
+        <span style="font-size: 14px"> View: <%= link_to "Tasks" %>  |  <%= link_to "People on this Project" %>  |  <%= link_to "Comments" %> </span><br/>
+      </span>
+      <span style="font-size: 14px; color: black;padding-right: 2px; float:right">
+        <span class="popping-orange">90%</span> <span class="uppercase weak-grey">Complete</span><br/>
+        <span class="popping-green">9</span> <span> out of </span><span class="popping-green">10</span> <span class="uppercase weak-grey">Tasks Complete</span> <br/>
+      </span>
+    </div>
+  <% end %>
+
+  <div class="milestone-tasks">
   </div>
-<% end %>
-
-<h2>Past Milestones</h2>
-<% @past_milestones.each do |due_date, milestones| %>
-  <div class="grouped-milestone" style="border-bottom: 1px dashed #aeaeae; margin: 5px 0px 5px 0px; padding-top:2px;padding: 5px">
-    <span class="popping-orange"><%= due_date.strftime("%B %d %Y")%></span> <br/>
-
-    <span class="dark-grey fourteen">There are <span class="popping-green"><%= milestones.collect {|milestone| milestone.project.name}.uniq.count %></span> projects with a milestone deadline of <span class="popping-orange" style="font-size:16px"><%= due_date.strftime("%B %d %Y") %> </span></span>
-      <table class="compact-table">
-        <tr><th>Project</th><th>Milestone Name</th><th>Milestone Status</th><th>Assigned To</th></tr>
-        <% milestones.each do |milestone| %>
-          <tr class="<%= cycle("odd","even") %>">
-            <td><%= milestone.project.name %></td>
-            <td><%= milestone.name %></td>
-            <td><%= number_to_percentage(milestone.percentage_complete, :precision => 0) %></td>
-            <td><%= milestone.try(:assigned_to).try(:name) %></td>
-          </tr>
-        <% end %>
-      </table>
-
-  <div class="clear"></div>
+  <div class="milestone-tasks">
   </div>
-<% end %>
+  <div class="milestone-tasks">
+  </div>
+</div>
