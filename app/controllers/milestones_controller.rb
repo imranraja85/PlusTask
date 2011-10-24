@@ -8,14 +8,14 @@ class MilestonesController < ApplicationController
   #end
 
   def index
-    @upcoming_milestones = Milestone.where(["company_id = ? and due_date >= ?", current_user.company_id, Date.today]).group("due_date")
-    @past_milestones     = Milestone.where(["company_id = ? AND due_date < ?", current_user.company_id, Date.today]).group("due_date")
+    @upcoming_milestones = Milestone.where(["company_id = ? and due_date >= ?", session[:company_id], Date.today]).group("due_date")
+    @past_milestones     = Milestone.where(["company_id = ? AND due_date < ?", session[:company_id], Date.today]).group("due_date")
   end
 
   # AJAX
   # Given a date, loads all milestones associated with that date
   def load_milestone
-    Milestone.where(["company_id = ? and due_date = ?", current_user.company_id, params[:due_date]])
+    Milestone.where(["company_id = ? and due_date = ?", session[:company_id], params[:due_date]])
   end
 
   def new

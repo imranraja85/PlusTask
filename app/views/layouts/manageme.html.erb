@@ -16,12 +16,12 @@
     <div id="header-container">
       <div id="top-header">
         <div class="floatL" id="company-header">
-          <%= link_to current_user.try(:company).try(:name), dashboard_path %> 
+          <%= link_to session[:company_name], dashboard_path %> 
           <span class="lime-green-header"><%= @page_title %></span>
         </div>
 
         <div class="floatR"> 
-         Welcome, <%= current_user.name %>!&nbsp;  <%= link_to "Settings", "" %> | &nbsp;<%= link_to "Logout", destroy_user_session_path %>
+         Welcome, <%= session[:user_name] %>!&nbsp;  <%= link_to "Settings", "" %> | &nbsp;<%= link_to "Logout", destroy_user_session_path %>
         </div>
         <div style="height: 0px;float:right">
           <%= image_tag("new-logo.png") %>
