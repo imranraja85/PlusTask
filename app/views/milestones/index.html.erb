@@ -1,20 +1,20 @@
 <div class="milestone-dates" style=" text-align:center; width: 200px; float: left; border-right: 1px solid #aeaeae; padding: 6px" >
-  <h2 style="font-size: 14px">Milestone Deadlines</h2><br/>
+  <h2 style="font-size: 14px">Milestone dates</h2><br/>
   <span class="milestones-selection" style="padding-bottom: 6px"><%= link_to "Upcoming" %> | <%= link_to "Past" %></span>
   <% @upcoming_milestones.each do |milestone| %>
 
-    <div class="date" style="text-align: center; padding: 6px;"> <%= link_to milestone.due_date.strftime("%B %d %Y"), nil, :class => 'popping-green green-link', :id => 'url', :style => "font-size: 14px;color: #9DB401" %>
+    <div class="date" style="text-align: center; padding: 6px;"> <%= link_to milestone.due_date.strftime("%B %d %Y"), milestones_by_date_milestones_path(:due_date => milestone.due_date.strftime("%Y-%m-%d")), :remote => true, :class => 'milestone-date-link popping-green green-link', :id => 'url', :style => "font-size: 14px;color: #9DB401" %>
     </div>
   <% end %>
 </div>
 
-<div class="milestones-container" style="float:right;width: 75%">
-  <h1 class="popping-orange">Milestones due on October 31 2011</h1>
+<div class="milestones-container" style="padding: 6px;float:right;width: 75%">
+  <h2 style="font-size: 14px">Milestones due on October 31 2011</h2>
 
-  <% 1.upto(3) do %>
-    <div class="milestone-project-status" style="padding: 10px; margin-bottom: 5px; background-color: #fff9eb; overflow: hidden;">
+  <% @milestones.each do |milestone| %>
+    <div class="milestone-project-status" style="padding: 10px; margin-bottom: 5px; border-bottom: 1px dashed black; overflow: hidden;">
       <span style="font-size: 24px; color: black;padding-right: 2px; float:left">
-        SIP - Prototype Iteration<br/>
+        <%= milestone.try(:project).try(:name) %> - <%= milestone.try(:name) %><br/>
         <span style="font-size: 14px"> View: <%= link_to "Tasks" %>  |  <%= link_to "People on this Project" %>  |  <%= link_to "Comments" %> </span><br/>
       </span>
       <span style="font-size: 14px; color: black;padding-right: 2px; float:right">

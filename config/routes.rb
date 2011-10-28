@@ -26,7 +26,7 @@ Manageme::Application.routes.draw do
 
   resources :milestones do
     collection do
-      get :testing_index
+      get :milestones_by_date
     end
   end
 

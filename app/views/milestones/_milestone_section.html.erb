@@ -1,0 +1,19 @@
+<script type="text/javascript">
+  var container_width = $('.milestone-progress-container').width();
+  $("#progressbar-<%= index %>").progressbar({ value: <%= milestone.percentage_complete %> });
+  $("#milestone-percentage-overlay-<%= index %>").css('left', container_width * <%= milestone.percentage_complete.to_f / 100.to_f %> - 45);
+</script>
+
+<div style="border: 1px dotted #c3d8e4; border-radius: 10px; padding: 6px; margin-bottom: 10px">
+
+  <span class="weak-grey uppercase">Project</span><br/> 
+  <h2 class="popping-green" style="color: #046780; margin-top:-5px;float:left"><%= link_to milestone.project.name, project_path(milestone.project) %> </h2><br/>
+  <span class="weak-grey uppercase">Milestone Name</span><br/>
+  <h2 class="popping-green green-link" style="font-size: 14px;margin-top:-5px;margin-bottom: 5px;float:left"><%= milestone.name %></h2>
+  <div class='clear'></div>
+
+  <div class="milestone-progress-container">
+    <div id="progressbar-<%= index %>" style=""></div>
+    <div id="milestone-percentage-overlay-<%= index %>" style="position: relative;top:-30px;color: #ffffff"><%= number_to_percentage(milestone.percentage_complete, :precision => 0) %></div>
+  </div>
+</div>

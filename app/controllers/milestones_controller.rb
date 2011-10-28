@@ -1,21 +1,20 @@
 class MilestonesController < ApplicationController
   layout 'manageme', :except => [:new]
 
-  #def index
-  #  @page_title = "Milestone Overview"
-  #  @upcoming_milestones = Milestone.where(["company_id = ? AND due_date >= ?", current_user.company_id, Date.today]).group_by(&:due_date)
-  #  @past_milestones = Milestone.where(["company_id = ? AND due_date < ?", current_user.company_id, Date.today]).group_by(&:due_date)
-  #end
-
   def index
-    @upcoming_milestones = Milestone.where(["company_id = ? and due_date >= ?", session[:company_id], Date.today]).group("due_date")
-    @past_milestones     = Milestone.where(["company_id = ? AND due_date < ?", session[:company_id], Date.today]).group("due_date")
+    @upcoming_milestones = Milestone.select("due_date").where(["company_id = ? and due_date >= ?", session[:company_id], Date.today]).group("due_date")
+    @past_milestones     = Milestone.select("due_date").where(["company_id = ? AND due_date < ?", session[:company_id], Date.today]).group("due_date")
+    @milestones = []
   end
 
   # AJAX
   # Given a date, loads all milestones associated with that date
-  def load_milestone
-    Milestone.where(["company_id = ? and due_date = ?", session[:company_id], params[:due_date]])
+  def milestones_by_date
+    @due_date = Date.parse(params[:due_date])
+    @milestones = Milestone.where(["company_id = ? and due_date = ?", session[:company_id], params[:due_date]])
+    respond_to do |format|
+      format.js
+    end
   end
 
   def new

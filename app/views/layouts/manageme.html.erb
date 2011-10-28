@@ -36,7 +36,6 @@
     </div>
     <div id="body">
       <div id="content">
-        <%= debug(session) %>
         <% flash.each do |name, msg| -%>
           <%= content_tag :div, msg, :id => "flash_#{name}" %>
         <% end -%>

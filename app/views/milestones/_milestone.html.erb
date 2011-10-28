@@ -1,0 +1,6 @@
+<h2 style="font-size: 14px">Milestones due on <%= @due_date.strftime("%B %d %Y") %></h2>
+
+<% @milestones.each_with_index do |milestone, index| %>
+  <%= render :partial => 'milestone_section', :locals => {:milestone => milestone, :index => index} %>
+<% end %>
+
