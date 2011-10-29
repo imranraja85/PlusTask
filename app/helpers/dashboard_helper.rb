@@ -1,15 +1,15 @@
 module DashboardHelper
-  def percentage_of_tasks_completed_for_a_project(project)
-    if project.tasks.count > 0
-      content_tag(:span, "#{number_to_percentage((project.tasks_by_status("completed").count.to_f/project.tasks.count.to_f) * 100, :precision => 0)}", :class => 'popping-orange')
+  def percentage_of_tasks_completed_for_a_project(project, project_tasks_count)
+    if project_tasks_count > 0
+      content_tag(:span, "#{number_to_percentage((project.tasks_by_status("completed").count.to_f/project_tasks_count.to_f) * 100, :precision => 0)}", :class => 'popping-orange')
     else
       content_tag(:span, "0%", :class => 'popping-orange')
     end
   end
 
-  def tasks_status_for_project(project)
-    if project.tasks.count > 0
-      "<span class='popping-green'>#{project.tasks_by_status("completed").count}</span><span class='weak-grey'> OF </span> <span class='popping-green'> #{project.tasks.count}</span>".html_safe
+  def tasks_status_for_project(project, project_tasks_count)
+    if project_tasks_count > 0
+      "<span class='popping-green'>#{project.tasks_by_status("completed").count}</span><span class='weak-grey'> OF </span> <span class='popping-green'> #{project_tasks_count}</span>".html_safe
     else
       content_tag(:span, "N/A", :class => 'weak-grey')
     end  

@@ -27,7 +27,7 @@
       </div>
       </div>
       <%= render :partial => 'milestones/milestone_stats', :locals => {:project => project, :current_project_milestone => project.current_milestone}%>
-      <%#= render :partial => 'projects/project_stats', :locals => {:project => project}%>
+      <%= render :partial => 'projects/project_stats', :locals => {:project => project, :project_tasks_count => project.tasks.count }%>
       <div class="clear"></div>
     </div>
   <% end %>
