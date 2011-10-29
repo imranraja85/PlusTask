@@ -1,12 +1,12 @@
 <div class="dashboard-milestone-stats">
   <ul class="no-list-type">
     <li class="small-text" style="background-color:#306380;"><span class="weak-grey uppercase" style="color:#ffffff">Milestone status</span></li>
-    <li style="text-align:center"><span class="percent-complete"><%= percentage_of_tasks_completed_for_a_milestone(project) %></li>
+    <li style="text-align:center"><span class="percent-complete"><%= percentage_of_tasks_completed_for_a_milestone(project, current_project_milestone) %></li>
     <li class="small-text"><span class="weak-grey uppercase">NEXT MILESTONE</span></li>
-    <li><span class="popping-green green-link"><%= link_to project.current_milestone.try(:name) ? project.current_milestone.try(:name) : 'No Milestone', milestones_project_path(project, :milestone_id => project.current_milestone)%></span></li>
+    <li><span class="popping-green green-link"><%= link_to current_project_milestone.try(:name) ? current_project_milestone.try(:name) : 'No Milestone', milestones_project_path(project, :milestone_id => current_project_milestone)%></span></li>
     <li class="small-text"><span class="weak-grey uppercase">Due Date</span></li>
-    <li><span class="popping-green"><%= project.current_milestone.try(:due_date) ? fmt_us(project.current_milestone.try(:due_date)) : 'No Milestone'%></span></li>
+    <li><span class="popping-green"><%= current_project_milestone.try(:due_date) ? fmt_us(current_project_milestone.try(:due_date)) : 'No Milestone'%></span></li>
     <li class="small-text"><span class="tasks-complete-text weak-grey">TASKS COMPLETE</span></li>
-    <li><span class="tasks-complete"><%= tasks_status_for_milestone(project) %></span></li>
+    <li><span class="tasks-complete"><%= tasks_status_for_milestone(project, current_project_milestone) %></span></li>
   </ul>
 </div>

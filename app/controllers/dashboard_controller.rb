@@ -4,7 +4,7 @@ class DashboardController < ApplicationController
 
   def index
     @page_title = "Dashboard"
-    @projects = @projects.order("updated_at desc").includes(:milestones, :tasks)
+    @projects = @projects.order("updated_at desc")
   end
 
   private

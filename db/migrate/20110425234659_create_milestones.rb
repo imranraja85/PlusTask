@@ -8,6 +8,7 @@ class CreateMilestones < ActiveRecord::Migration
                 `assigned_to` INT(11) UNSIGNED COMMENT 'Person who is responsible for the milestone',           
                 `project_id` INT(11) UNSIGNED COMMENT 'Project the milestone is associated with',           
                 `due_date` TIMESTAMP NULL COMMENT 'Date that the milestone should be completed',
+                `tasks_count` INT(11) UNSIGNED NOT NULL DEFAULT 0 COMMENT 'Number of tasks in this milestone',
                 `updated_at` TIMESTAMP NULL COMMENT 'Datetime of latest update',
                 `created_at` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Datetime of creation.',
                 PRIMARY KEY  (`id`)

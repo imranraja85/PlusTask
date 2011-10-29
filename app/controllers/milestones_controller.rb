@@ -11,7 +11,7 @@ class MilestonesController < ApplicationController
   # Given a date, loads all milestones associated with that date
   def milestones_by_date
     @due_date = Date.parse(params[:due_date])
-    @milestones = Milestone.where(["company_id = ? and due_date = ?", session[:company_id], params[:due_date]])
+    @milestones = Milestone.where(["company_id = ? and DATE(due_date) = ?", session[:company_id], params[:due_date]])
     respond_to do |format|
       format.js
     end

@@ -5,6 +5,7 @@ class Project < ActiveRecord::Base
   has_many :tasks
   has_many :comments, :as => :commentable
   has_many :milestones
+
   STATUS = ['Requirement Gathering','Design','Coding','Testing','Live']
 
   def owner

@@ -25,8 +25,8 @@ class Milestone < ActiveRecord::Base
   end
 
   def percentage_complete
-    if tasks.count > 0
-      "#{(tasks_by_status('completed').count.to_f/tasks.count.to_f) * 100}"
+    if tasks_count > 0
+      "#{(tasks_by_status('completed').count.to_f/tasks_count) * 100}"
     else
       0
     end
