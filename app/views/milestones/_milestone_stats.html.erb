@@ -1,7 +1,12 @@
+<% content_for :js do %>
+  $("#progressbar-<%=index%>").progressbar({ value: <%= current_project_milestone.percentage_complete.to_i rescue 0 %> });
+<% end %>
+
 <div class="dashboard-milestone-stats">
   <ul class="no-list-type">
     <li class="small-text" style="background-color:#306380;"><span class="weak-grey uppercase" style="color:#ffffff">Milestone status</span></li>
-    <li style="text-align:center"><span class="percent-complete"><%= percentage_of_tasks_completed_for_a_milestone(project, current_project_milestone) %></li>
+    <!---<li style="text-align:center"><span class="percent-complete"><%#= percentage_of_tasks_completed_for_a_milestone(project, current_project_milestone) %></li>-->
+    <li id="progressbar-<%= index %>"></li>
     <li class="small-text"><span class="weak-grey uppercase">NEXT MILESTONE</span></li>
     <li><span class="popping-green green-link"><%= link_to current_project_milestone.try(:name) ? current_project_milestone.try(:name) : 'No Milestone', milestones_project_path(project, :milestone_id => current_project_milestone)%></span></li>
     <li class="small-text"><span class="weak-grey uppercase">Due Date</span></li>

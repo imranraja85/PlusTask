@@ -1,7 +1,7 @@
 module DashboardHelper
   def percentage_of_tasks_completed_for_a_project(project, project_tasks_count)
     if project_tasks_count > 0
-      content_tag(:span, "#{number_to_percentage((project.tasks_by_status("completed").count.to_f/project_tasks_count.to_f) * 100, :precision => 0)}", :class => 'popping-orange')
+      content_tag(:span, "#{number_to_percentage(project.percentage_tasks_complete, :precision => 0)}", :class => 'popping-orange')
     else
       content_tag(:span, "0%", :class => 'popping-orange')
     end

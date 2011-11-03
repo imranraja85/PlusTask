@@ -1,6 +1,8 @@
 /*
 *= require_self
 *= require_tree .
+*= require_directory ./'rest'
+*= require_directory ./'css'
 */
 
 /* rest of the file omited */

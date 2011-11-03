@@ -24,6 +24,14 @@ class Project < ActiveRecord::Base
     tasks.count  
   end
 
+  def percentage_tasks_complete
+    if number_of_tasks > 0
+      (tasks_by_status('completed').count.to_f/number_of_tasks) * 100      
+    else
+      0
+    end
+  end
+
   def current_milestone
     milestones.where("due_date >= ?",  Date.today).limit(1).first
   end

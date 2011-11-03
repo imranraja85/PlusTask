@@ -3,7 +3,7 @@
 <%= javascript_include_tag "plugins/jquery.simplemodal.1.4.min.js" %>
 <%= stylesheet_link_tag 'dashboard', 'main' %>
 <div id="dashboard-projects">
-  <% @projects.each do |project| %>
+  <% @projects.each_with_index do |project, index| %>
     <div class="dashboard-project <%= cycle("project-even", "project-odd") %>">
       <div style="float:left">
         <span class="dashboard-project-name"><%= link_to project.name, project_path(project) %></span>
@@ -26,8 +26,8 @@
         </ol>
       </div>
       </div>
-      <%= render :partial => 'milestones/milestone_stats', :locals => {:project => project, :current_project_milestone => project.current_milestone}%>
-      <%= render :partial => 'projects/project_stats', :locals => {:project => project, :project_tasks_count => project.tasks.count }%>
+      <%= render :partial => 'milestones/milestone_stats', :locals => {:project => project, :current_project_milestone => project.current_milestone, :index => index}%>
+      <%= render :partial => 'projects/project_stats', :locals => {:project => project, :project_tasks_count => project.tasks.count, :index => index }%>
       <div class="clear"></div>
     </div>
   <% end %>

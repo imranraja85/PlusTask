@@ -1,7 +1,12 @@
+<% content_for :js do %>
+  $("#project-progressbar-<%=index%>").progressbar({ value: <%= project.percentage_tasks_complete %> });
+<% end %>
+
 <div class="dashboard-project-stats">
   <ul class="no-list-type">
     <li class="small-text" style="background-color:#306380"><span class="weak-grey uppercase" style="color: #ffffff">Project status</span></li>
     <li style="text-align:center"><span class="percent-complete"><%= percentage_of_tasks_completed_for_a_project(project, project_tasks_count) %></li>
+    <li id="project-progressbar-<%=index%>"></li>
     <li class="small-text"><span class="weak-grey uppercase">Completion Date</span></li>
     <li><span class="popping-green"><%= project.live_date ? fmt_us(project.try(:live_date)) : 'No Date Set'%></span></li>
     <li class="small-text"><span class="tasks-complete-text weak-grey">TASKS COMPLETE</span></li>
