@@ -6,6 +6,11 @@
     <div class="date" style="text-align: center; padding: 6px;"> <%= link_to milestone.due_date.strftime("%B %d %Y"), milestones_by_date_milestones_path(:due_date => milestone.due_date.strftime("%Y-%m-%d")), :remote => true, :class => 'milestone-date-link popping-green green-link', :id => 'url', :style => "font-size: 14px;color: #9DB401" %>
     </div>
   <% end %>
+  <% @past_milestones.each do |milestone| %>
+
+    <div class="date" style="text-align: center; padding: 6px;"> <%= link_to milestone.due_date.strftime("%B %d %Y"), milestones_by_date_milestones_path(:due_date => milestone.due_date.strftime("%Y-%m-%d")), :remote => true, :class => 'milestone-date-link popping-green green-link', :id => 'url', :style => "font-size: 14px;color: #9DB401" %>
+    </div>
+  <% end %>
 </div>
 
 <div class="milestones-container" style="padding: 6px;float:right;width: 75%">

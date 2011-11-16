@@ -9,6 +9,8 @@ gem "mysql2"#, '~> 0.2.6'
 gem "jquery-rails"
 gem "vpim"
 gem "devise"
+gem "execjs"
+gem "therubyracer"
 
 # Deploy with Capistrano
 # gem 'capistrano'
